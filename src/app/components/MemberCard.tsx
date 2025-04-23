@@ -4,7 +4,7 @@ import Pic from "@/Public/Rishitha Kona.png";
 
 const MemberCard = () => {
   return (
-    <div className="h-1/5 w-1/5 rounded-3xl border-[2px] border-[#000000 p-5 text-center font-serif">
+    <div className="border-[#000000 h-1/5 w-1/5 rounded-3xl border-[2px] p-5 text-center font-serif">
       <div className="text-4xl">President</div>
       <div className="">
         <Image
