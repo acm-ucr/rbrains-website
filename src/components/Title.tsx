@@ -7,9 +7,7 @@ interface TitleComponent {
 
 const Title = ({ text, textSize }: TitleComponent) => {
   return (
-    <p
-      className={`bg-amber-50 p-3 font-serif font-bold text-amber-950 ${textSize} text-2xl`}
-    >
+    <p className={`font-rbrains bg-rbrains-background p-3 font-bold text-rbrains-dark-brown ${textSize} text-2xl`}>
       {text}
     </p>
   );
