@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         rbrains: {
           "dark-brown": "#3b2b27",
-          "background": "#f4eee7",
+          background: "#f4eee7",
         },
       },
       fontFamily: {
