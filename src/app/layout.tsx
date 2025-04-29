@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { ReactQueryClientProvider } from "@/utils/react-query";
