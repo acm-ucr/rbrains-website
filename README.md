@@ -11,7 +11,7 @@
 
 ## Figma
 
-[ACM UCR Website Template Figma Design File](https://www.figma.com/)
+[R'Brains Figma](https://www.figma.com/design/g48JbInaTp429KPDB4QNAj/R-Brains-Website?node-id=0-1&p=f)
 
 ## Node.js
 
