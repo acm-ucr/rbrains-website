@@ -12,7 +12,7 @@ function App() {
   };
 
   return (
-    <div className="bg-[#FFF5E1] min-h-screen">
+    <div className="min-h-screen bg-[#FFF5E1]">
       <h1 style={galleryTextStyle}>Gallery</h1>
       <CssGrid />
     </div>
