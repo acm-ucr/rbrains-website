@@ -1,22 +1,34 @@
 import React from "react";
 import Image from "next/image";
-import Pic from "@/Public/Rishitha Kona.png";
+interface MemberCardProps {
+  position: string;
+  imageSrc: string;
+  name: string;
+  pronouns: string;
+  info: string;
+}
 
-const MemberCard = () => {
+const MemberCard = ({
+  position,
+  imageSrc,
+  name,
+  pronouns,
+  info,
+}: MemberCardProps) => {
   return (
-    <div className="border-[#000000 h-1/5 w-1/5 rounded-3xl border-[2px] p-5 text-center font-serif">
-      <div className="text-4xl">President</div>
+    <div className="h-full w-3/5 rounded-3xl border-[3px] border-black p-5 text-center font-serif">
+      <div className="text-4xl">{position}</div>
       <div className="">
         <Image
           className="mx-auto size-3/4"
-          src={Pic}
-          alt="Rishitha Kona"
+          src={imageSrc}
+          alt="picture of member"
+          width={200}
+          height={200}
         ></Image>
-        <div className="">
-          <div className="text-2xl"> Rishitha Kona </div>
-          <div>(she/her/hers) </div>
-          <div>3rd year Psychology and Business double major </div>
-        </div>
+        <div className="text-2xl"> {name} </div>
+        <div> ({pronouns}) </div>
+        <div> {info} </div>
       </div>
     </div>
   );
