@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { ReactQueryClientProvider } from "@/utils/react-query";
-import NavigationBar from "@/navigationbar";
+import NavigationBar from "@/app/components/navigationbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
