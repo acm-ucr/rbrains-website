@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Besley } from "next/font/google"; //inter
 import { ReactQueryClientProvider } from "@/utils/react-query";
+import Footer from "./components/footer";
 
 const besley = Besley({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: LayoutProps) {
     <html lang="en">
       <body className={besley.className}>
         <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
+        <Footer />
       </body>
     </html>
   );
