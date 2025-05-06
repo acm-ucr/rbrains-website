@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Besley } from "next/font/google";
+import { Besley } from "next/font/google"; //inter
 import { ReactQueryClientProvider } from "@/utils/react-query";
 import Footer from "./components/footer";
 
