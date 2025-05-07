@@ -1,69 +1,20 @@
 import React from "react";
 import MemberCard from "@/app/components/MemberCard";
+import { mainBoard } from "@/data/boardInfo";
 
 const BoardPage = () => {
   return (
-    <div className="grid gap-5">
-      <div className="grid grid-cols-3 place-items-center gap-5">
+    <div className="grid grid-cols-3 place-items-center gap-5 p-10">
+      {mainBoard.map((member, index) => (
         <MemberCard
-          position="President"
-          imageSrc="/Board/Rishitha_Kona.png"
-          name="Rishitha Kona"
-          pronouns="she/her/hers"
-          info="3rd year Psychology and Business double major"
+          key={index}
+          position={member.position}
+          imageSrc={member.imageSrc}
+          name={member.name}
+          pronouns={member.pronouns}
+          info={member.info}
         />
-        <MemberCard
-          position="Secretary"
-          imageSrc="/Board/Abby_Lazar.png"
-          name="Abby Lazar"
-          pronouns="she/her/hers"
-          info="3rd year Psychology major, TFDP Film minor"
-        />
-        <MemberCard
-          position="Treasurer"
-          imageSrc="/Board/Sagey_Moorjani.png"
-          name="Sagey Moorjani"
-          pronouns="she/her/hers"
-          info="2nd year Psychology major"
-        />
-        <MemberCard
-          position="Public Relations Head"
-          imageSrc="/Board/Shriya_Patel.png"
-          name="Shriya patel"
-          pronouns="she/her/hers"
-          info="3rd-year Psychology major"
-        />
-        <MemberCard
-          position="Social Media Director"
-          imageSrc="/Board/Catherine_Sanchez.png"
-          name="Catherine Sanchez"
-          pronouns="she/her/hers"
-          info="4th year Psychology major, Public Policy minor"
-        />
-        <MemberCard
-          position="Social Media Committee"
-          imageSrc="/Board/Alexa_Zelaya.png"
-          name="Alexa Zelaya"
-          pronouns="she/her/hers"
-          info="3rd year Psychology major, Education minor"
-        />
-      </div>
-      <div className="grid grid-cols-3 place-items-end">
-        <MemberCard
-          position="Coordination Lead"
-          imageSrc="/Board/Angie_Santander.png"
-          name="Angie Santander"
-          pronouns="she/her/hers"
-          info="2nd year Psychology major"
-        />
-        <MemberCard
-          position="Representative"
-          imageSrc="/Board/Alexander_Tang.png"
-          name="Alexander Tang"
-          pronouns="he/him/his"
-          info="1st year Psychology major"
-        />
-      </div>
+      ))}
     </div>
   );
 };
