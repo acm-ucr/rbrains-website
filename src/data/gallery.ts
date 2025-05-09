@@ -11,49 +11,49 @@ import Nine from "@/public/gallery/PsychBehindMusic9.webp";
 import Ten from "@/public/gallery/PsychBehindMusic10.webp";
 
 interface Photo {
-    src: StaticImageData;
-    alt: string;
+  src: StaticImageData;
+  alt: string;
 }
 
 export const gallery: Photo[] = [
-    {
-        src: One,
-        alt: "photo 1",
-    },
-    {
-        src: Two,
-        alt: "photo 2",
-    },
-    {
-        src: Three,
-        alt: "photo 3",
-    },
-    {
-        src: Four,
-        alt: "photo 4",
-    },
-    {
-        src: Five,
-        alt: "photo 5",
-    },
-    {
-        src: Six,
-        alt: "photo 6",
-    },
-    {
-        src: Seven,
-        alt: "photo 7",
-    },
-    {
-        src: Eight,
-        alt: "photo 8",
-    },
-    {
-        src: Nine,
-        alt: "photo 9",
-    },
-    {
-        src: Ten,
-        alt: "photo 10",
-    },
+  {
+    src: One,
+    alt: "photo 1",
+  },
+  {
+    src: Two,
+    alt: "photo 2",
+  },
+  {
+    src: Three,
+    alt: "photo 3",
+  },
+  {
+    src: Four,
+    alt: "photo 4",
+  },
+  {
+    src: Five,
+    alt: "photo 5",
+  },
+  {
+    src: Six,
+    alt: "photo 6",
+  },
+  {
+    src: Seven,
+    alt: "photo 7",
+  },
+  {
+    src: Eight,
+    alt: "photo 8",
+  },
+  {
+    src: Nine,
+    alt: "photo 9",
+  },
+  {
+    src: Ten,
+    alt: "photo 10",
+  },
 ];
