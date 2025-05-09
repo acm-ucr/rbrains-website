@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Besley } from "next/font/google"; //inter
 import { ReactQueryClientProvider } from "@/utils/react-query";
+import Navigationbar from "@/app/navbar";
 
 const besley = Besley({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body className={besley.className}>
+        <Navigationbar />
         <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
       </body>
     </html>
