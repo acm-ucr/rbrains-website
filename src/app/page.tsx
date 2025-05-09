@@ -1,13 +1,9 @@
-import React from "react";
-import Gallery from "../components/gallery/Gallery";
-
-const ServPage = () => {
+const Home = () => {
   return (
-    <div>
-      <Gallery />
+    <div className="flex h-screen w-screen items-center justify-center">
+      Hello World
     </div>
   );
 };
 
-export default ServPage;
-
+export default Home;
