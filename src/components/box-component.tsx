@@ -1,5 +1,4 @@
 {
-    
   /* 
   example usage: 
 
@@ -31,9 +30,9 @@ const BoxComponent = ({
   return (
     <div className="">
       <div
-        className={`overflow-hidden rounded-3xl border-[4px] ${borderColor}  bg-[#F9F5EF]`}
+        className={`overflow-hidden rounded-3xl border-[4px] ${borderColor} bg-[#F9F5EF]`}
       >
-        <div className={`bg-white ${textSize}  ${padding}`}>{children} </div>
+        <div className={`bg-white ${textSize} ${padding}`}>{children} </div>
       </div>
     </div>
   );
