@@ -1,5 +1,5 @@
 import React from "react";
-import MemberCard from "@/app/components/MemberCard";
+import MemberCard from "@/components/board/MemberCard";
 import { mainBoard } from "@/data/boardInfo";
 
 const BoardPage = () => {
