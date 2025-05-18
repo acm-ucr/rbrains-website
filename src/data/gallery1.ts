@@ -1,12 +1,12 @@
 import { StaticImageData } from "next/image";
-import One from "@/public/gallerysection2/health1.png";
-import Two from "@/public/gallerysection2/health2.png";
-import Three from "@/public/gallerysection2/health3.png";
-import Four from "@/public/gallerysection2/health4.png";
-import Five from "@/public/gallerysection2/health5.png";
-import Six from "@/public/gallerysection2/health6.png";
-import Seven from "@/public/gallerysection2/health7.png";
-import Eight from "@/public/gallerysection2/health8.png";
+import One from "@/public/gallerysection2/health1.webp";
+import Two from "@/public/gallerysection2/health2.webp";
+import Three from "@/public/gallerysection2/health3.webp";
+import Four from "@/public/gallerysection2/health4.webp";
+import Five from "@/public/gallerysection2/health5.webp";
+import Six from "@/public/gallerysection2/health6.webp";
+import Seven from "@/public/gallerysection2/health7.webp";
+import Eight from "@/public/gallerysection2/health8.webp";
 
 interface Photo {
   src: StaticImageData;
