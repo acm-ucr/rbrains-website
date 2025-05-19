@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
     { name: "Opportunities", href: "/opportunities" },
   ];
 
-  const star = "/star.png";
+  const star = "/star.webp";
 
   return (
     <nav className="font-besley flex items-center justify-between border-b-2 border-black bg-amber-50 px-10 py-4">
