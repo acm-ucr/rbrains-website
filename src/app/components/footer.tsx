@@ -2,6 +2,7 @@
 
 import { FaMailchimp } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
+import { FaNewspaper } from "react-icons/fa6";
 import Link from "next/link";
 
 const Footer = () => {
@@ -11,7 +12,7 @@ const Footer = () => {
         UCR R'Brains
       </span>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-3">
         <Link
           href="https://www.instagram.com/rbrainsatucr/"
           target="_blank"
@@ -21,7 +22,15 @@ const Footer = () => {
         </Link>
 
         <Link
-          href="https://mailchimp.com"
+          href="https://highlanderlink.ucr.edu/organization/rbrains"
+          target="_blank"
+          aria-label="InterestForm"
+        >
+          <FaNewspaper className="text-4xl text-yellow-950 transition-transform hover:scale-110" />
+        </Link>
+
+        <Link
+          href="https://docs.google.com/forms/d/1R4oxeOC3CpATipMxl3J4olg6IimapSmRxj0kGZL_uZE/viewform?edit_requested=true"
           target="_blank"
           aria-label="Mailchimp"
         >
