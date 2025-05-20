@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { gallery } from "../../data/gallery2";
+import { gallery } from "../../data/gallery3";
 
 const Gallery2 = () => {
   return (
