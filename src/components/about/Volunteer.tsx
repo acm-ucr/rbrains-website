@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Volunteer from "@/public/home/volunteer.webp";
 
 const Component = () => {
   return (
-    <div className="flex bg-[#F9F5EF] p-6">
+    <div>
       <Image
-        src="/volunteer.webp"
+        src={Volunteer}
         alt="Volunteer Logo"
         className="object-contain"
         width={300}
