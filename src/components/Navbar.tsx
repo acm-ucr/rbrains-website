@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <div className="font-besley fixed top-0 left-0 z-50 flex w-full items-center justify-between border-b-2 border-black bg-amber-50 px-10 py-4">
+    <div className="font-besley bg-rbrains-background fixed top-0 left-0 z-50 flex w-full items-center justify-between border-b-2 border-black px-10 py-4">
       <div className="text-lg font-semibold text-black">UCR R'Brains</div>
       <div className="flex items-center space-x-8 text-base font-semibold text-black">
         {all_link.map((link) => (
