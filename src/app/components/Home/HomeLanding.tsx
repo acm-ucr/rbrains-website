@@ -8,7 +8,7 @@ const HomeLanding = () => {
         <div className="relative aspect-square flex-1">
           <Image
             className="object-contain"
-            src="/homelanding/squiggle1.png"
+            src="/homelanding/squiggle1.webp"
             alt="left squiggle"
             fill
           />
@@ -20,7 +20,7 @@ const HomeLanding = () => {
           <div className="relative h-64 w-84">
             <Image
               className="object-contain"
-              src="/homelanding/rbrain_logo.png"
+              src="/homelanding/rbrain_logo.webp"
               alt="home"
               fill
             />
@@ -36,7 +36,7 @@ const HomeLanding = () => {
         <div className="relative aspect-square flex-1">
           <Image
             className="object-contain"
-            src="/homelanding/squiggle2.png"
+            src="/homelanding/squiggle2.webp"
             alt="right squiggle"
             fill
           />
