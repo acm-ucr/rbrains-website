@@ -3,7 +3,7 @@ import React from "react";
 const ResourceServices = () => {
   return (
     <div className="flex h-screen items-center justify-center">
-      <div className="flex h-9/10 w-5/6 flex-col space-y-3 rounded-4xl border-4 border-[#93B48F] bg-[#FFFBF9] p-10 text-center font-[Besley]">
+      <div className="flex h-9/10 w-5/6 flex-col space-y-3 rounded-3xl border-5 border-[#93B48F] bg-[#FFFBF9] p-10 text-center font-[Besley]">
         <div className="text-2xl font-semibold text-[#D66E6D]">
           UCR's Health Promotion and Education Department
         </div>
