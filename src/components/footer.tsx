@@ -2,13 +2,13 @@
 
 import { FaMailchimp } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
-import { FaNewspaper } from "react-icons/fa6";
+import { FaLink } from "react-icons/fa6";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="fixed bottom-0 flex w-full items-center justify-between gap-2 border-t-3 border-yellow-950 bg-neutral-100 py-3 pr-4">
-      <span className="font-besley pl-4 text-2xl text-yellow-950">
+    <footer className="fixed bottom-0 flex w-full items-center justify-between gap-2 border-t-3 border-yellow-950 bg-rbrains-background py-3 px-10">
+      <span className="text-lg font-semibold text-black">
         UCR R'Brains
       </span>
 
@@ -26,7 +26,7 @@ const Footer = () => {
           target="_blank"
           aria-label="InterestForm"
         >
-          <FaNewspaper className="text-4xl text-yellow-950 transition-transform hover:scale-110" />
+          <FaLink className="text-4xl text-yellow-950 transition-transform hover:scale-110" />
         </Link>
 
         <Link
