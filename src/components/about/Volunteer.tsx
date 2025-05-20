@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Volunteer from "@/public/home/volunteer.webp"
+import Volunteer from "@/public/home/volunteer.webp";
 
 const Component = () => {
   return (

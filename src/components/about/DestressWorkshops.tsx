@@ -1,5 +1,5 @@
 import Image from "next/image";
-import DestressWorkshops from "@/public/home/StarLogo.webp"
+import DestressWorkshops from "@/public/home/StarLogo.webp";
 
 const Component = () => {
   return (

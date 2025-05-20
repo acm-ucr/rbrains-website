@@ -17,9 +17,9 @@ const MemberCard = ({
   info,
 }: MemberCardProps) => {
   return (
-    <div className="flex flex-col items-center text-center space-y-3 font-rbrains border-5 border-black rounded-4xl p-6 w-full min-h-[22rem] bg-white">
+    <div className="font-rbrains flex min-h-[22rem] w-full flex-col items-center space-y-3 rounded-4xl border-5 border-black bg-white p-6 text-center">
       <p className="text-4xl font-semibold">{position}</p>
-      <div className="relative w-1/2 aspect-square max-w-xs mx-auto">
+      <div className="relative mx-auto aspect-square w-1/2 max-w-xs">
         <Image
           src={imageSrc}
           alt={`${name}'s photo`}
