@@ -11,6 +11,7 @@ module.exports = {
       },
       fontFamily: {
         rbrains: "var(--font-besley)",
+        seoul: ["SeoulHangangCL", "sans-serif"],
       },
     },
   },
