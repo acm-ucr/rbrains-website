@@ -7,10 +7,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="fixed bottom-0 flex w-full items-center justify-between gap-2 border-t-3 border-yellow-950 bg-rbrains-background py-3 px-10">
-      <span className="text-lg font-semibold text-black">
-        UCR R'Brains
-      </span>
+    <footer className="bg-rbrains-background fixed bottom-0 flex w-full items-center justify-between gap-2 border-t-3 border-yellow-950 px-10 py-3">
+      <span className="text-lg font-semibold text-black">UCR R'Brains</span>
 
       <div className="flex items-center gap-3">
         <Link
