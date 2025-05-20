@@ -1,0 +1,55 @@
+import React from "react";
+import Image from "next/image";
+
+const HomeLanding = () => {
+  return (
+    <>
+    <div className="flex items-center justify-between bg-[#F9F5EF]">
+        <div className="relative flex-1 aspect-square">
+            <Image
+                className="object-contain"
+                src="/homelanding/squiggle1.png"
+                alt="left squiggle"
+                fill
+            />
+        </div>
+        
+        {/* main contents */}
+        <div className="relative flex-1 aspect-square flex items-center justify-center">
+            {/* content */}
+                <div className="relative w-84 h-64">
+                    <Image
+                        className="object-contain"
+                        src="/homelanding/rbrain_logo.png"
+                        alt="home"
+                        fill
+                    />
+
+                    <div className="absolute inset-0 flex items-center justify-center font-[Besley] text-[#442F2C] font-semibold">
+                        <p className=" text-3xl">To</p>
+                    </div>
+                </div>
+            {/* </div> */}
+        </div>
+        {/* end of main content */}
+
+        {/* right imgage */}
+        <div className="relative flex-1 aspect-square">
+            <Image
+                className="object-contain"
+                src="/homelanding/squiggle2.png"
+                alt="right squiggle"
+                fill
+            />
+        </div>
+    </div>
+
+    {/* bottom border */}
+    <div className="flex justify-center">
+        <div className="w-11/12 border-b-2 border-[#282220]"/>
+    </div>
+    </>
+  );
+};
+
+export default HomeLanding;
