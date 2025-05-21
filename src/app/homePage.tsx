@@ -28,7 +28,7 @@ const HomePage = () => {
               <Button
                 text="Learn More"
                 buttonColor="bg-[#D66E6D]"
-                link="https://highlanderlink.ucr.edu/organization/rbrains"
+                link="https://www.instagram.com/rbrainsatucr/?igsh=NTc4MTIwNjQ2YQ%3D%3D"
               />
             </div>
           </BoxComponent>
