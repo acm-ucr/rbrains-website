@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="w-full">
       <AboutUs />
-      <div className="flex items-center justify-center place-content-center gap-40">
+      <div className="flex place-content-center items-center justify-center gap-40">
         <Pyschology />
         <MindStar />
         <Volunteer />
