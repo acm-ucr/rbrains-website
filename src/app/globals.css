@@ -1,3 +1,10 @@
 @import "tailwindcss";
 
 @config '../../tailwind.config.ts';
+
+@font-face {
+  font-family: "SeoulHangangCL";
+  src: url("/fonts/SeoulHangangCL.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
