@@ -2,24 +2,19 @@ import React from "react";
 import Image from "next/image";
 import { gallery } from "../../data/gallery1";
 
-const Gallery1 = () => {
+const Gallery = () => {
   return (
-    <div className="grid w-full auto-rows-[300px] grid-cols-4 items-center justify-center gap-5 p-16">
+    <div className="grid w-full grid-cols-4 items-center justify-center gap-5 p-16">
       {gallery.map((photo, index) => (
         <div
           key={index}
-          className={`relative h-full w-full overflow-hidden rounded-3xl border-5 border-[#FFDCA5] ${index === 2 ? "col-span-2 row-span-2" : ""} ${index === 5 ? "col-span-2 row-span-2" : ""} ${index === 6 || index === 7 ? "row-span-2" : ""} `}
+          className={`flex items-center justify-center overflow-hidden rounded-3xl border-5 border-[#72A0C7] ${index === 0 ? "col-span-2 row-span-2" : ""} ${index === 5 || index === 8 || index === 7 ? "row-span-4" : ""} ${index === 6 || index === 9 ? "row-span-2" : ""} `}
         >
-          <Image
-            src={photo.src}
-            alt={photo.alt}
-            fill
-            className="object-cover"
-          />
+          <Image src={photo.src} alt={photo.alt} />
         </div>
       ))}
     </div>
   );
 };
 
-export default Gallery1;
+export default Gallery;

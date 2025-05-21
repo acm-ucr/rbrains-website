@@ -1,10 +1,11 @@
 import { StaticImageData } from "next/image";
-import One from "@/public/gallerysection4/horror1.webp";
-import Two from "@/public/gallerysection4/horror2.webp";
-import Three from "@/public/gallerysection4/horror3.webp";
-import Four from "@/public/gallerysection4/horror4.webp";
-import Five from "@/public/gallerysection4/horror5.webp";
-import Six from "@/public/gallerysection4/horror6.webp";
+import One from "@/public/gallerysection3/love1.webp";
+import Two from "@/public/gallerysection3/love2.webp";
+import Three from "@/public/gallerysection3/love3.webp";
+import Four from "@/public/gallerysection3/love4.webp";
+import Five from "@/public/gallerysection3/love5.webp";
+import Six from "@/public/gallerysection3/love6.webp";
+import Seven from "@/public/gallerysection3/love7.webp";
 
 interface Photo {
   src: StaticImageData;
@@ -35,5 +36,9 @@ export const gallery: Photo[] = [
   {
     src: Six,
     alt: "photo 6",
+  },
+  {
+    src: Seven,
+    alt: "photo 7",
   },
 ];
