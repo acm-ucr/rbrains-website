@@ -1,6 +1,14 @@
 // src/data/teamData.ts
 
-export const mainBoard = [
+export interface BoardMember {
+  position: string;
+  imageSrc: string;
+  name: string;
+  pronouns: string;
+  info: string;
+}
+
+export const mainBoard: BoardMember[] = [
   {
     position: "President",
     imageSrc: "/Board/Rishitha_Kona.webp",
@@ -23,7 +31,7 @@ export const mainBoard = [
     info: "2nd year Psychology major",
   },
   {
-    position: "Public Relations Head",
+    position: "Public Relations",
     imageSrc: "/Board/Shriya_Patel.webp",
     name: "Shriya Patel",
     pronouns: "she/her/hers",
@@ -44,7 +52,7 @@ export const mainBoard = [
     info: "3rd year Psychology major, Education minor",
   },
   {
-    position: "Coordination Lead",
+    position: "Coordinator",
     imageSrc: "/Board/Angie_Santander.webp",
     name: "Angie Santander",
     pronouns: "she/her/hers",

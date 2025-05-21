@@ -1,9 +1,9 @@
 import React from "react";
-import Lab from "@/app/components/Lab";
-import Volunteer from "@/app/components/Volunteering";
-import Club from "@/app/components/Club";
+import Lab from "@/components/opportunities/Lab";
+import Volunteer from "@/components/opportunities/Volunteering";
+import Club from "@/components/opportunities/Club";
 
-const Opportunities = () => {
+const Page = () => {
   return (
     <div className="mt-30 flex h-screen w-screen flex-col items-center justify-center">
       <Lab />
@@ -13,4 +13,4 @@ const Opportunities = () => {
   );
 };
 
-export default Opportunities;
+export default Page;
