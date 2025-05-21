@@ -1,5 +1,5 @@
-import Title from "@/components/Title";
-import BoxComponent from "@/components/box-component";
+import Title from "@/components/ReusableTitle";
+import BoxComponent from "@/components/ReusableBox";
 import Image from "next/image";
 import Button from "@/components/ReuseableButton";
 
