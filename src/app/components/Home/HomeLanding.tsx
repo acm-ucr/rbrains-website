@@ -64,7 +64,7 @@ const HomeLanding = () => {
         </div>
       </div>
 
-      <div className="mx-auto flex w-11/12 items-center">
+      <div className="mx-auto flex w-full items-center px-2">
         <div className="flex-grow border-b-2 border-[#282220]"></div>
         <div className="relative mx-9 h-4 w-4">
           <Image
