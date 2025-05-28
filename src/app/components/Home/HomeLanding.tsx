@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const HomeLanding = () => {
   return (
-    <div className="bg-[#F9F5EF]">
+    <div className="bg-rbrains-background">
       <div className="flex w-full flex-row pb-10">
         <div className="relative top-6 flex-1">
           <Image
