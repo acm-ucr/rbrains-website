@@ -3,7 +3,7 @@ import React from "react";
 const Club = () => {
   return (
     <div className="flex w-screen flex-col px-40 py-5">
-      <h1 className="text-left text-3xl font-bold mb-6">Club</h1>
+      <h1 className="mb-6 text-left text-3xl font-bold">Club</h1>
       <p className="rounded-2xl border-[5px] border-[#B64D4C] p-8 text-center">
         R'Brains and Behavior will arrange various social events with UCR staff
         and alumni in order to allow members the opportunity to create networks
