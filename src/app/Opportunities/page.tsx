@@ -5,7 +5,7 @@ import Club from "@/components/opportunities/Club";
 
 const Page = () => {
   return (
-    <div className="mt-30 flex h-screen w-screen flex-col items-center justify-center">
+    <div className="w-full px-6 py-16 space-y-16">
       <Lab />
       <Volunteer />
       <Club />
