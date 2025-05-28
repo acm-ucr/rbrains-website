@@ -37,8 +37,8 @@ const HomePage = () => {
           <Image
             alt="“You have to believe in yourself when no one else does.” - Serena Williams"
             src="/quote.webp"
-            width={350}
-            height={100}
+            width={320}
+            height={180}
             className="object-contain"
           />
         </div>
