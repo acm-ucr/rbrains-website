@@ -3,6 +3,7 @@ import { Besley } from "next/font/google"; //inter
 import { ReactQueryClientProvider } from "@/utils/react-query";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/Navbar";
+import HomeLanding from "./components/Home/HomeLanding";
 
 const besley = Besley({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: LayoutProps) {
         <div className="mt-20">
           <NavBar />
         </div>
+        <HomeLanding />
         <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
         <Footer />
       </body>
