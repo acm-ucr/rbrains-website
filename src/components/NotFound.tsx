@@ -5,7 +5,7 @@ import PurpleSquiggle from "@/public/notfound/Purple.webp";
 
 const NotFoundPage = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col -mt-20">
       <Image
         src={PurpleSquiggle}
         alt="Blue squiggle design"
