@@ -36,9 +36,9 @@ const HomePage = () => {
         <div className="flex basis-[35%] items-center justify-center">
           <Image
             alt="“You have to believe in yourself when no one else does.” - Serena Williams"
-            src="home/quote.webp"
-            width={350}
-            height={100}
+            src="/quote.webp"
+            width={380}
+            height={250}
             className="object-contain"
           />
         </div>
