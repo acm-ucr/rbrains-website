@@ -39,7 +39,7 @@ const HomePage = () => {
             src="/quote.webp"
             width={380}
             height={250}
-            className="-mt-6 -mb-10 object-contain"
+            className="object-contain"
           />
         </div>
       </div>
