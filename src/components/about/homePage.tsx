@@ -17,7 +17,7 @@ const HomePage = () => {
             textSize="text-[1.7vw]"
             borderColor="border-[#D66E6D]"
           >
-            <p className="font-seoul text-center">
+            <p className="font-[SeoulHangang CL] text-center">
               R’Brains is a psychology-focused club at UCR dedicated to
               fostering curiosity and engagement in the field of psychology. We
               provide a space for students to explore psychological topics,
