@@ -80,8 +80,13 @@ const HomePage = () => {
           >
             <div className="font-seoul p flex flex-col justify-center space-y-6 pt-8 pb-8 text-center">
               <p>Find us on the Highlander Link:</p>
-              <a href="https://highlanderlink.ucr.edu/organization/rbrains">
-                https://highlanderlink.ucr.edu/organization/rbrains
+              <a
+                href="https://highlanderlink.ucr.edu/organization/rbrains"
+                rel="noopener noreferrer"
+                target="_blank"
+                className="text-md mx-auto inline-block w-fit cursor-pointer rounded-4xl bg-[#C485B7] px-8 py-4 text-white"
+              >
+                Join R'Brains & Behaviors
               </a>
             </div>
           </BoxComponent>
