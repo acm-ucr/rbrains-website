@@ -4,8 +4,7 @@ import HomeLanding from "@/components/about/HomeLanding";
 const ServPage = () => {
   return (
     <div>
-      <HomeLanding
-      />
+      <HomeLanding />
     </div>
   );
 };
