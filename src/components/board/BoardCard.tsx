@@ -24,7 +24,7 @@ const MemberCard = ({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
       viewport={{ once: true }}
-      whileHover={{ scale: 1.05 }}
+      whileHover={{ scale: 1.02 }}
       className="font-rbrains flex min-h-[22rem] w-full flex-col items-center space-y-3 rounded-4xl border-5 border-black bg-white p-6 text-center"
     >
       <p className="text-4xl font-semibold">{position}</p>
