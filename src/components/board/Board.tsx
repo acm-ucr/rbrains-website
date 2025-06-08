@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import MemberCard from "@/components/board/BoardCard";
 import { mainBoard } from "@/data/boardInfo";
