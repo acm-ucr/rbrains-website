@@ -43,12 +43,14 @@ const Navbar: React.FC = () => {
               </div>
             </Link>
           ))}
-          <Link
-            href="\somelinkforjoin"
-            className="rounded-xl border-2 border-[#846FA8] px-4 py-1 font-semibold text-black"
-          >
-            Join
-          </Link>
+          <div className="pb-2">
+            <Link
+              href="\somelinkforjoin"
+              className="flex items-center justify-center rounded-2xl border-2 border-[#846FA8] px-7 py-2 font-semibold text-black"
+            >
+              Join
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -72,7 +74,7 @@ const Navbar: React.FC = () => {
           >
             {all_link.map((link) => (
               <Link key={link.name} href={link.href}>
-                <div className="cursor-pointer">
+                <div className="flex cursor-pointer flex-col items-center justify-between">
                   <span>{link.name}</span>
                   <Image
                     src={WebMarker}
