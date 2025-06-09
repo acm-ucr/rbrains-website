@@ -1,16 +1,29 @@
 import Image from "next/image";
 import Volunteer from "@/public/home/volunteer.webp";
+import VolunteerMobile from "@/public/home/volunteerMobile.webp";
 
 const Component = () => {
   return (
-    <div>
-      <Image
-        src={Volunteer}
-        alt="Volunteer Logo"
-        className="object-contain"
-        width={300}
-        height={300}
-      />
+    <div className="flex w-full justify-center">
+      <div className="hidden md:block">
+        <Image
+          src={Volunteer}
+          alt="Volunteer Logo"
+          className="object-contain"
+          width={270}
+          height={350}
+        />
+      </div>
+
+      <div className="block md:hidden">
+        <Image
+          src={VolunteerMobile}
+          alt="Volunteer Logo on Mobile"
+          className="object-contain"
+          width={350}
+          height={350}
+        />
+      </div>
     </div>
   );
 };
