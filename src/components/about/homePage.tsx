@@ -1,6 +1,7 @@
 import Title from "@/components/ReusableTitle";
 import BoxComponent from "@/components/ReusableBox";
 import Image from "next/image";
+import Link from "next/link";
 import Button from "@/components/ReuseableButton";
 
 const HomePage = () => {
@@ -80,14 +81,12 @@ const HomePage = () => {
           >
             <div className="font-seoul p flex flex-col justify-center space-y-6 pt-8 pb-8 text-center">
               <p>Find us on the Highlander Link:</p>
-              <a
-                href="https://highlanderlink.ucr.edu/organization/rbrains"
-                rel="noopener noreferrer"
-                target="_blank"
+              <Link
+                href="/somelinkforjoin"
                 className="text-md mx-auto inline-block w-fit cursor-pointer rounded-4xl bg-[#C485B7] px-8 py-4 text-white"
               >
                 Join R'Brains & Behaviors
-              </a>
+              </Link>
             </div>
           </BoxComponent>
         </div>
