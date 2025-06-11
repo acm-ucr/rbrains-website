@@ -1,17 +1,29 @@
+"use client";
 import Title from "@/components/ReusableTitle";
 import BoxComponent from "@/components/ReusableBox";
 import Image from "next/image";
 import Button from "@/components/ReuseableButton";
+import { motion } from "motion/react";
 
 const HomePage = () => {
   return (
     <div>
-      <div className="px-10 pt-5 pb-4">
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="px-10 pt-5 pb-4"
+      >
         <Title text="ABOUT US" textSize="text-[40px]" />
-      </div>
+      </motion.div>
 
       <div id="Box-image" className="flex flex-row space-x-10 px-12">
-        <div className="basis-[65%]">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="basis-[65%]"
+        >
           <BoxComponent
             padding="p-6"
             textSize="text-[1.7vw]"
@@ -32,8 +44,13 @@ const HomePage = () => {
               />
             </div>
           </BoxComponent>
-        </div>
-        <div className="flex basis-[35%] items-center justify-center">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex basis-[35%] items-center justify-center"
+        >
           <Image
             alt="“You have to believe in yourself when no one else does.” - Serena Williams"
             src="/home/quote.webp"
@@ -41,10 +58,17 @@ const HomePage = () => {
             height={250}
             className="-translate-y-10 object-contain"
           />
-        </div>
+        </motion.div>
       </div>
 
-      <div id="Mission statement" className="flex flex-col pt-3 pr-20 pl-10">
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.3 }}
+        viewport={{ once: true }}
+        id="Mission statement"
+        className="flex flex-col pt-3 pr-20 pl-10"
+      >
         <div className="flex pt-5 pb-4">
           <Title text="MISSION STATEMENT" textSize="text-[40px]" />
         </div>
@@ -67,8 +91,15 @@ const HomePage = () => {
             </p>
           </BoxComponent>
         </div>
-      </div>
-      <div id="HOW TO JOIN" className="flex-col px-10 pt-5 pb-4">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.3 }}
+        viewport={{ once: true }}
+        id="HOW TO JOIN"
+        className="flex-col px-10 pt-5 pb-4"
+      >
         <div className="flex flex-row items-end justify-end pr-10">
           <Title text="HOW TO JOIN" textSize="text-[40px]" />
         </div>
@@ -80,17 +111,20 @@ const HomePage = () => {
           >
             <div className="font-seoul p flex flex-col justify-center space-y-6 pt-8 pb-8 text-center">
               <p>Find us on the Highlander Link:</p>
-              <div className="flex flex-row items-center justify-center">
+              <motion.div
+                className="flex flex-row items-center justify-center"
+                whileHover={{ scale: 1.02 }}
+              >
                 <Button
                   text="Join R'Brains & Behaviors"
                   buttonColor="bg-[#C485B7]"
                   link="https://highlanderlink.ucr.edu/organization/rbrains"
                 />
-              </div>
+              </motion.div>
             </div>
           </BoxComponent>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
