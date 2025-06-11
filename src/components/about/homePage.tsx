@@ -125,20 +125,22 @@ const HomePage = () => {
           </BoxComponent>
         </div>
       </motion.div>
-      <div className="flex justify-center items-center pt-5">
+      <div className="flex items-center justify-center pt-5">
         <Title text="What We Do" textSize="text-[40px]" />
       </div>
-      <div className="basis-[65%] pb-22 pr-10 pl-10">
-          <BoxComponent
-            borderColor="border-[#C485B7]"
-            padding="p-6"
-            textSize="text-[1.7vw]"
-          >
-            <p className="font-[SeoulHangang CL] text-center">
-              R'Brains brings students together to explore psychology through engaging events. We aim to educate, support mental well-being, and build a community passionate about understanding the mind.
-            </p>
-          </BoxComponent>
-        </div>
+      <div className="basis-[65%] pr-10 pb-22 pl-10">
+        <BoxComponent
+          borderColor="border-[#C485B7]"
+          padding="p-6"
+          textSize="text-[1.7vw]"
+        >
+          <p className="font-[SeoulHangang CL] text-center">
+            R'Brains brings students together to explore psychology through
+            engaging events. We aim to educate, support mental well-being, and
+            build a community passionate about understanding the mind.
+          </p>
+        </BoxComponent>
+      </div>
     </div>
   );
 };
