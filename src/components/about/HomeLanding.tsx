@@ -1,22 +1,80 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { motion, useAnimation } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const HomeLanding = () => {
+  const [delay, setDelay] = useState(1.5);
+  const [toDelay, setToDelay] = useState(0.5);
+  const [logoDelay, setLogoDelay] = useState(1);
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    // Start initial animation for heart beat
+    controls
+      .start({
+        opacity: 1,
+        scale: 1,
+        transition: { delay: 2, duration: 0.4, ease: "easeOut" },
+      })
+      .then(() => {
+        // After it completes, start looping heartbeat pulse
+        controls.start({
+          scale: [1, 1.3, 1],
+          transition: { duration: 1, repeat: Infinity, ease: "easeInOut" },
+        });
+      });
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setToDelay(0), toDelay * 1000 + 500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLogoDelay(0), logoDelay * 1000 + 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="bg-rbrains-background">
       <div className="flex w-full flex-row pb-10">
-        <div className="relative top-6 flex-1">
+        <motion.div
+          initial={{ opacity: 0, x: -200 }}
+          animate={{ opacity: 1, x: 0, rotate: 0 }}
+          transition={{ duration: 0.6, delay: delay }}
+          whileHover={{
+            scale: 1.03,
+            transition: { duration: 0.3, ease: "easeOut" },
+          }}
+          onAnimationComplete={() => setDelay(0)}
+          viewport={{ once: true }}
+          id="left squiggle"
+          className="relative top-6 flex-1"
+        >
           <Image
             className="h-full w-full object-contain"
             src="/homelanding/squiggle2.svg"
             alt="left squiggle"
             fill
           />
-        </div>
+        </motion.div>
 
         {/* main contents */}
         <div className="relative ml-6 flex flex-1 flex-col items-center justify-center">
-          <div className="z-10 w-full">
+          <motion.div
+            initial={{ y: 200, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            whileHover={{
+              scale: 1.05,
+            }}
+            viewport={{ once: true }}
+            id="Welcome text "
+            className="z-10 w-full"
+          >
             <Image
               className="h-auto w-full object-contain"
               src="/homelanding/curvetext.svg"
@@ -25,9 +83,17 @@ const HomeLanding = () => {
               height={0}
               sizes="100vw"
             />
-          </div>
+          </motion.div>
           <div className="absolute top-[50%] z-10 flex w-full flex-none -translate-y-[30%] items-center justify-center">
-            <div className="w-1/8 max-w-[4rem]">
+            <motion.div
+              initial={{ y: 200, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: toDelay }}
+              viewport={{ once: true }}
+              whileHover={toDelay === 0 ? { scale: 1.05 } : {}}
+              id="`TO`text"
+              className="w-1/8 max-w-[4rem]"
+            >
               <Image
                 className="h-auto w-full object-contain"
                 src="/homelanding/TO.svg"
@@ -36,9 +102,18 @@ const HomeLanding = () => {
                 height={0}
                 sizes="100vw"
               />
-            </div>
+            </motion.div>
           </div>
-          <div className="relative z-10 h-auto w-full">
+          <motion.div
+            initial={{ y: 200, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: logoDelay, duration: 0.5 }}
+            viewport={{ once: true }}
+            onAnimationEnd={() => setLogoDelay(0)}
+            whileHover={logoDelay === 0 ? { scale: 1.05 } : {}}
+            id="rBrain logo"
+            className="relative z-10 h-auto w-full"
+          >
             <div className="absolute right-0 bottom-0 left-0 -translate-y-[5%] transform">
               <Image
                 className="h-auto w-full object-contain"
@@ -49,24 +124,48 @@ const HomeLanding = () => {
                 sizes="100vw"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
         {/* end of main content */}
 
         {/* right imgage */}
-        <div className="relative top-6 flex-1">
+        <motion.div
+          initial={{ opacity: 0, x: 200 }}
+          animate={{ opacity: 1, x: 0, rotate: 0 }}
+          transition={{ duration: 0.6, delay: delay }}
+          whileHover={{
+            scale: 1.03,
+            transition: { duration: 0.3, ease: "easeOut" },
+          }}
+          viewport={{ once: true }}
+          onAnimationComplete={() => setDelay(0)}
+          id="right squiggle"
+          className="relative top-6 flex-1"
+        >
           <Image
             className="h-full w-full object-contain"
             src="/homelanding/squiggle1.svg"
             alt="right squiggle"
             fill
           />
-        </div>
+        </motion.div>
       </div>
 
       <div className="mx-auto flex w-full items-center px-2">
-        <div className="flex-grow border-b-2 border-[#282220]"></div>
-        <div className="relative mx-9 h-4 w-4">
+        <motion.div
+          className="flex-grow border-b-2 border-[#282220]"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 1.6, duration: 0.6, ease: "easeOut" }}
+          style={{ transformOrigin: "left" }}
+        ></motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={controls}
+          id="heart"
+          className="relative mx-9 h-4 w-4"
+        >
           <Image
             className="absolute top-0 left-0"
             src="/homelanding/heart3.svg"
@@ -88,8 +187,15 @@ const HomeLanding = () => {
             width={13}
             height={13}
           />
-        </div>
-        <div className="flex-grow border-b-2 border-[#282220]"></div>
+        </motion.div>
+        <motion.div
+          className="flex-grow border-b-2 border-[#282220]"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 1.6, duration: 0.6, ease: "easeOut" }}
+          style={{ transformOrigin: "right" }}
+        ></motion.div>
       </div>
     </div>
   );
