@@ -78,7 +78,7 @@ const HomePage = () => {
             padding="p-6"
             textSize="text-[1.7vw]"
           >
-            <p className="font-seoul text-center">
+            <p className="font-[SeoulHangang CL] text-center">
               R'Brains and Behavior is a student-led psychology club dedicated
               to creating an inclusive environment for anyone interested in
               psychology. We provide a space to explore diverse topics, engage
@@ -109,14 +109,14 @@ const HomePage = () => {
             borderColor="border-[#C485B7]"
             textSize="text-[2.5vw]"
           >
-            <div className="font-seoul p flex flex-col justify-center space-y-6 pt-8 pb-8 text-center">
+            <div className="font-[SeoulHangang CL] p flex flex-col justify-center space-y-6 pt-8 pb-8 text-center">
               <p>Find us on the Highlander Link:</p>
               <motion.div
                 className="flex flex-row items-center justify-center"
                 whileHover={{ scale: 1.02 }}
               >
                 <Button
-                  text="Join R'Brains & Behaviors"
+                  text="R'Brains"
                   buttonColor="bg-[#C485B7]"
                   link="https://highlanderlink.ucr.edu/organization/rbrains"
                 />
