@@ -81,12 +81,14 @@ const HomePage = () => {
           >
             <div className="font-seoul p flex flex-col justify-center space-y-6 pt-8 pb-8 text-center">
               <p>Find us on the Highlander Link:</p>
-              <Link
-                href="/somelinkforjoin"
-                className="text-md mx-auto inline-block w-fit cursor-pointer rounded-4xl bg-[#C485B7] px-8 py-4 text-white"
-              >
-                Join R'Brains & Behaviors
-              </Link>
+                {/* // className="text-md mx-auto inline-block w-fit cursor-pointer rounded-4xl bg-[#C485B7] px-8 py-4 text-white" */}
+                <div className="flex flex-row items-center justify-center">
+                  <Button
+                    text="Join R'Brains & Behaviors"
+                    buttonColor="bg-[#C485B7]"
+                    link="https://highlanderlink.ucr.edu/organization/rbrains"
+                  />
+                </div>
             </div>
           </BoxComponent>
         </div>
