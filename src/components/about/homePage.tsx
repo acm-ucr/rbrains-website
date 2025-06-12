@@ -125,6 +125,35 @@ const HomePage = () => {
           </BoxComponent>
         </div>
       </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.3 }}
+        viewport={{ once: true }}
+        className="flex items-center justify-center pt-5"
+      >
+        <Title text="WHAT WE DO" textSize="text-[40px]" />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.3 }}
+        viewport={{ once: true }}
+        className="basis-[65%] pr-10 pb-22 pl-10"
+      >
+        <BoxComponent
+          borderColor="border-[#C485B7]"
+          padding="p-6"
+          textSize="text-[1.7vw]"
+        >
+          <p className="font-[SeoulHangang CL] text-center">
+            R'Brains brings students together to explore psychology through
+            engaging events. We aim to educate, support mental well-being, and
+            build a community passionate about understanding the mind.
+          </p>
+        </BoxComponent>
+      </motion.div>
     </div>
   );
 };
