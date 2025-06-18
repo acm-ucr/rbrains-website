@@ -59,7 +59,7 @@
 
 /* Calendar container */
 .calendar-container {
-  @apply bg-card border-4 border-muted shadow-lg;
+  @apply bg-card border-muted border-4 shadow-lg;
 }
 
 /* Calendar grid animation */
@@ -73,11 +73,11 @@
 }
 
 .calendar-day:hover {
-  @apply shadow-md transform scale-[1.02];
+  @apply scale-[1.02] transform shadow-md;
 }
 
 .calendar-day:focus-within {
-  @apply ring-2 ring-ring ring-offset-2 ring-offset-background;
+  @apply ring-ring ring-offset-background ring-2 ring-offset-2;
 }
 
 /* Navigation buttons */
@@ -87,16 +87,16 @@
 
 /* Event badges */
 .calendar-badge {
-  @apply text-xs font-medium px-2 py-1 rounded-sm transition-all duration-150;
+  @apply rounded-sm px-2 py-1 text-xs font-medium transition-all duration-150;
 }
 
 .calendar-badge:hover {
-  @apply transform scale-[1.02];
+  @apply scale-[1.02] transform;
 }
 
 /* Popover content */
 .calendar-popover .popover-content {
-  @apply w-80 p-0 border-2 border-border;
+  @apply border-border w-80 border-2 p-0;
 }
 
 .popover-content {
@@ -109,19 +109,19 @@
 
 /* Custom event badge variants */
 .event-badge-work {
-  @apply bg-blue-500 hover:bg-blue-600 text-white;
+  @apply bg-blue-500 text-white hover:bg-blue-600;
 }
 
 .event-badge-personal {
-  @apply bg-green-500 hover:bg-green-600 text-white;
+  @apply bg-green-500 text-white hover:bg-green-600;
 }
 
 .event-badge-meeting {
-  @apply bg-purple-500 hover:bg-purple-600 text-white;
+  @apply bg-purple-500 text-white hover:bg-purple-600;
 }
 
 .event-badge-holiday {
-  @apply bg-red-500 hover:bg-red-600 text-white;
+  @apply bg-red-500 text-white hover:bg-red-600;
 }
 
 /* Data attribute styling for event types */
@@ -150,21 +150,21 @@
   .calendar-grid {
     gap: 0.125rem;
   }
-  
+
   .calendar-day {
     min-height: 80px;
     padding: 0.25rem;
   }
-  
+
   .calendar-header h1 {
     font-size: 2rem;
   }
-  
+
   .calendar-header h2 {
     font-size: 1.5rem;
     min-width: 150px;
   }
-  
+
   .calendar-badge {
     font-size: 0.625rem;
     padding: 0.125rem 0.25rem;
@@ -176,7 +176,7 @@
   .calendar-day {
     min-height: 120px;
   }
-  
+
   .calendar-badge {
     font-size: 0.75rem;
   }
@@ -216,7 +216,7 @@
 }
 
 .event-item:hover {
-  @apply transform scale-[1.02];
+  @apply scale-[1.02] transform;
 }
 
 /* ============================================ */
@@ -226,11 +226,11 @@
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .calendar-day {
-    @apply border-2 border-foreground;
+    @apply border-foreground border-2;
   }
-  
+
   .calendar-badge {
-    @apply border border-foreground;
+    @apply border-foreground border;
   }
 }
 
@@ -241,11 +241,11 @@
   .smooth-transition {
     @apply transition-none;
   }
-  
+
   .calendar-grid {
     animation: none;
   }
-  
+
   .calendar-day:hover {
     @apply transform-none;
   }
@@ -255,7 +255,7 @@
 .calendar-day:focus-visible,
 .calendar-button:focus-visible,
 .calendar-badge:focus-visible {
-  @apply ring-2 ring-ring ring-offset-2 ring-offset-background;
+  @apply ring-ring ring-offset-background ring-2 ring-offset-2;
 }
 
 /* ============================================ */
@@ -264,28 +264,28 @@
 
 @media print {
   .calendar-container {
-    @apply shadow-none border-2 border-foreground;
+    @apply border-foreground border-2 shadow-none;
   }
-  
+
   .calendar-navigation {
     @apply hidden;
   }
-  
+
   .popover-content {
     @apply hidden;
   }
-  
+
   .calendar-day {
-    @apply border border-foreground bg-background text-foreground;
+    @apply border-foreground bg-background text-foreground border;
   }
-  
+
   .calendar-badge {
-    @apply bg-muted text-foreground border border-foreground;
+    @apply bg-muted text-foreground border-foreground border;
   }
-  
+
   /* Remove hover effects in print */
   .calendar-day:hover {
-    @apply shadow-none transform-none;
+    @apply transform-none shadow-none;
   }
 }
 
@@ -295,7 +295,7 @@
 
 /* Calendar specific utilities */
 .calendar-today {
-  @apply border-primary border-2 bg-primary/5;
+  @apply border-primary bg-primary/5 border-2;
 }
 
 .calendar-weekend {

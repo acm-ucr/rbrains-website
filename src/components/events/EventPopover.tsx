@@ -38,18 +38,18 @@ const EventPopover = ({ event, date }: EventPopoverProps) => {
   }
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString('en-US', {
-      hour: 'numeric',
-      minute: '2-digit',
-      hour12: true
+    return date.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
     });
   };
 
   const formatDate = (date: Date) => {
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
   };
 
@@ -58,32 +58,34 @@ const EventPopover = ({ event, date }: EventPopoverProps) => {
       <PopoverTrigger asChild>
         <Badge
           variant="default"
-          className="w-full justify-start cursor-pointer hover:opacity-80 text-xs truncate calendar-badge smooth-transition"
+          className="calendar-badge smooth-transition w-full cursor-pointer justify-start truncate text-xs hover:opacity-80"
         >
           {event.summary}
         </Badge>
       </PopoverTrigger>
-      
-      <PopoverContent className="w-80 calendar-popover popover-content" side="right" align="start">
+
+      <PopoverContent
+        className="calendar-popover popover-content w-80"
+        side="right"
+        align="start"
+      >
         <Card className="border-0 shadow-none">
           <CardHeader className="pb-3">
             <CardTitle className="text-lg">{event.summary}</CardTitle>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <div className="text-muted-foreground flex items-center gap-2 text-sm">
               <CalendarIcon className="h-4 w-4" />
               {formatDate(date)}
             </div>
           </CardHeader>
-          
+
           <CardContent className="space-y-3">
             {/* Time Information */}
             {hasStartTime && (
               <div className="flex items-center gap-2 text-sm">
-                <ClockIcon className="h-4 w-4 text-muted-foreground" />
+                <ClockIcon className="text-muted-foreground h-4 w-4" />
                 <span>
                   {formatTime(eventStartDate)}
-                  {hasEndTime && (
-                    <span> - {formatTime(eventEndDate)}</span>
-                  )}
+                  {hasEndTime && <span> - {formatTime(eventEndDate)}</span>}
                 </span>
               </div>
             )}
@@ -92,7 +94,7 @@ const EventPopover = ({ event, date }: EventPopoverProps) => {
             {event.location && (
               <>
                 <div className="flex items-center gap-2 text-sm">
-                  <MapPinIcon className="h-4 w-4 text-muted-foreground" />
+                  <MapPinIcon className="text-muted-foreground h-4 w-4" />
                   <span>{event.location}</span>
                 </div>
               </>
@@ -103,7 +105,7 @@ const EventPopover = ({ event, date }: EventPopoverProps) => {
               <>
                 <Separator />
                 <div className="text-sm">
-                  <p className="font-medium mb-1">Description</p>
+                  <p className="mb-1 font-medium">Description</p>
                   <p className="text-muted-foreground">{event.description}</p>
                 </div>
               </>
@@ -114,30 +116,30 @@ const EventPopover = ({ event, date }: EventPopoverProps) => {
               <>
                 <Separator />
                 <div className="text-sm">
-                  <p className="font-medium mb-2">
+                  <p className="mb-2 font-medium">
                     Attendees ({event.attendees.length})
                   </p>
                   <div className="space-y-1">
                     {event.attendees.slice(0, 3).map((attendee, index) => (
                       <div key={index} className="flex items-center gap-2">
                         <div
-                          className={`w-2 h-2 rounded-full ${
-                            attendee.responseStatus === 'accepted'
-                              ? 'bg-green-500'
-                              : attendee.responseStatus === 'declined'
-                              ? 'bg-red-500'
-                              : attendee.responseStatus === 'tentative'
-                              ? 'bg-yellow-500'
-                              : 'bg-gray-400'
+                          className={`h-2 w-2 rounded-full ${
+                            attendee.responseStatus === "accepted"
+                              ? "bg-green-500"
+                              : attendee.responseStatus === "declined"
+                                ? "bg-red-500"
+                                : attendee.responseStatus === "tentative"
+                                  ? "bg-yellow-500"
+                                  : "bg-gray-400"
                           }`}
                         />
-                        <span className="text-xs text-muted-foreground">
+                        <span className="text-muted-foreground text-xs">
                           {attendee.displayName || attendee.email}
                         </span>
                       </div>
                     ))}
                     {event.attendees.length > 3 && (
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-muted-foreground text-xs">
                         +{event.attendees.length - 3} more
                       </p>
                     )}

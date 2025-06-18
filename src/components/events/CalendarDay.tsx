@@ -25,26 +25,26 @@ const CalendarDay = ({ date, currentMonth, events }: CalendarDayProps) => {
     date.getMonth() === today.getMonth() &&
     date.getFullYear() === today.getFullYear();
 
-    const getWeekdayColorClass = (weekday: number) => {
-      switch (weekday) {
-        case 0: // Sunday
-        case 6: // Saturday
-          return "text-[#D66E6D]";
-        case 1:
-          return "text-[#5F95A7]";
-        case 2:
-          return "text-[#93B48F]";
-        case 3:
-          return "text-[#C08CE1]";
-        case 4:
-          return "text-[#F0B5D3]";
-        case 5:
-          return "text-[#F0CAA5]";
-        default:
-          return "";
-      }
-    };
-    
+  const getWeekdayColorClass = (weekday: number) => {
+    switch (weekday) {
+      case 0: // Sunday
+      case 6: // Saturday
+        return "text-[#D66E6D]";
+      case 1:
+        return "text-[#5F95A7]";
+      case 2:
+        return "text-[#93B48F]";
+      case 3:
+        return "text-[#C08CE1]";
+      case 4:
+        return "text-[#F0B5D3]";
+      case 5:
+        return "text-[#F0CAA5]";
+      default:
+        return "";
+    }
+  };
+
   // Filter events for this specific day
   const dayEvents = events.filter((event) => {
     let eventStartDate: Date | null = null;
@@ -82,52 +82,47 @@ const CalendarDay = ({ date, currentMonth, events }: CalendarDayProps) => {
 
   return (
     <Card
-      className={`
-        min-h-[100px] p-2 border-2 border-[#442F2C] bg-card transition-all duration-200 hover:shadow-md calendar-day smooth-transition
-        ${!isCurrentMonth ? 'text-muted-foreground' : ''}
-        ${isWeekend && isCurrentMonth ? 'text-destructive' : ''}
-        ${isToday ? 'border-2 bg-primary/5' : ''}
-  `}
->
+      className={`bg-card calendar-day smooth-transition min-h-[100px] border-2 border-[#442F2C] p-2 transition-all duration-200 hover:shadow-md ${!isCurrentMonth ? "text-muted-foreground" : ""} ${isWeekend && isCurrentMonth ? "text-destructive" : ""} ${isToday ? "bg-primary/5 border-2" : ""} `}
+    >
       {/* Date Number */}
-      <div className="text-right mb-1">
-      <span
-  className={`text-2xl font-semibold ${
-    isToday ? "text-primary" : getWeekdayColorClass(date.getDay())
-  }`}
->
-  {date.getDate()}
-</span>
-
+      <div className="mb-1 text-right">
+        <span
+          className={`text-2xl font-semibold ${
+            isToday ? "text-primary" : getWeekdayColorClass(date.getDay())
+          }`}
+        >
+          {date.getDate()}
+        </span>
       </div>
 
       {/* Events */}
       <div className="space-y-1">
         {visibleEvents.map((event, index) => (
-          <EventPopover
-            key={index}
-            event={event}
-            date={date}
-          />
+          <EventPopover key={index} event={event} date={date} />
         ))}
-        
+
         {hasMoreEvents && (
           <Popover>
             <PopoverTrigger asChild>
               <Badge
                 variant="secondary"
-                className="w-full justify-center cursor-pointer hover:bg-secondary/80 text-xs calendar-badge"
+                className="hover:bg-secondary/80 calendar-badge w-full cursor-pointer justify-center text-xs"
               >
                 +{dayEvents.length - maxVisibleEvents} more
               </Badge>
             </PopoverTrigger>
-            <PopoverContent className="w-64 p-2 calendar-popover">
+            <PopoverContent className="calendar-popover w-64 p-2">
               <div className="space-y-1">
                 {dayEvents.slice(maxVisibleEvents).map((event, index) => (
-                  <div key={index} className="p-2 hover:bg-accent rounded smooth-transition">
+                  <div
+                    key={index}
+                    className="hover:bg-accent smooth-transition rounded p-2"
+                  >
                     <p className="text-sm font-medium">{event.summary}</p>
                     {event.location && (
-                      <p className="text-xs text-muted-foreground">{event.location}</p>
+                      <p className="text-muted-foreground text-xs">
+                        {event.location}
+                      </p>
                     )}
                   </div>
                 ))}

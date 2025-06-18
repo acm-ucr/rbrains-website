@@ -17,7 +17,7 @@ module.exports = {
         // nested theme group if still needed
         rbrains: {
           "dark-brown": "#4B2E29",
-          "background": "#f9f5ef",
+          background: "#f9f5ef",
         },
       },
       fontFamily: {
