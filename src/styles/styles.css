@@ -1,0 +1,324 @@
+/* styles/calendar.css */
+/* ShadCN Calendar Custom Styles */
+
+/* ============================================ */
+/* THEME CUSTOMIZATION */
+/* ============================================ */
+
+/* Light mode colors */
+:root {
+  /* Primary colors for calendar header and today highlight */
+  --primary: 210 40% 50%;
+  --primary-foreground: 0 0% 98%;
+
+  /* Secondary colors for navigation and accents */
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+
+  /* Destructive for weekends */
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  /* Muted colors for other month days */
+  --muted: 210 40% 98%;
+  --muted-foreground: 215 16% 47%;
+
+  /* Accent for hover states */
+  --accent: 210 40% 96%;
+  --accent-foreground: 222 47% 11%;
+
+  /* Border colors */
+  --border: 214 32% 91%;
+  --ring: 215 20% 65%;
+}
+
+/* Dark mode variations */
+.dark {
+  --primary: 210 40% 50%;
+  --primary-foreground: 0 0% 98%;
+
+  --secondary: 217 33% 17%;
+  --secondary-foreground: 210 40% 98%;
+
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 0 0% 98%;
+
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+
+  --accent: 217 33% 17%;
+  --accent-foreground: 210 40% 98%;
+
+  --border: 217 33% 17%;
+  --ring: 215 20% 65%;
+}
+
+/* ============================================ */
+/* CALENDAR COMPONENT STYLES */
+/* ============================================ */
+
+/* Calendar container */
+.calendar-container {
+  @apply bg-card border-4 border-muted shadow-lg;
+}
+
+/* Calendar grid animation */
+.calendar-grid {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Calendar day cells */
+.calendar-day {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.calendar-day:hover {
+  @apply shadow-md transform scale-[1.02];
+}
+
+.calendar-day:focus-within {
+  @apply ring-2 ring-ring ring-offset-2 ring-offset-background;
+}
+
+/* Navigation buttons */
+.calendar-button {
+  @apply rounded-full transition-colors duration-200;
+}
+
+/* Event badges */
+.calendar-badge {
+  @apply text-xs font-medium px-2 py-1 rounded-sm transition-all duration-150;
+}
+
+.calendar-badge:hover {
+  @apply transform scale-[1.02];
+}
+
+/* Popover content */
+.calendar-popover .popover-content {
+  @apply w-80 p-0 border-2 border-border;
+}
+
+.popover-content {
+  @apply animate-in fade-in-0 zoom-in-95 slide-in-from-left-2;
+}
+
+/* ============================================ */
+/* EVENT TYPE STYLING */
+/* ============================================ */
+
+/* Custom event badge variants */
+.event-badge-work {
+  @apply bg-blue-500 hover:bg-blue-600 text-white;
+}
+
+.event-badge-personal {
+  @apply bg-green-500 hover:bg-green-600 text-white;
+}
+
+.event-badge-meeting {
+  @apply bg-purple-500 hover:bg-purple-600 text-white;
+}
+
+.event-badge-holiday {
+  @apply bg-red-500 hover:bg-red-600 text-white;
+}
+
+/* Data attribute styling for event types */
+[data-event-type="work"] {
+  @apply bg-blue-500 hover:bg-blue-600;
+}
+
+[data-event-type="personal"] {
+  @apply bg-green-500 hover:bg-green-600;
+}
+
+[data-event-type="meeting"] {
+  @apply bg-purple-500 hover:bg-purple-600;
+}
+
+[data-event-type="holiday"] {
+  @apply bg-red-500 hover:bg-red-600;
+}
+
+/* ============================================ */
+/* RESPONSIVE DESIGN */
+/* ============================================ */
+
+/* Mobile (max 640px) */
+@media (max-width: 640px) {
+  .calendar-grid {
+    gap: 0.125rem;
+  }
+  
+  .calendar-day {
+    min-height: 80px;
+    padding: 0.25rem;
+  }
+  
+  .calendar-header h1 {
+    font-size: 2rem;
+  }
+  
+  .calendar-header h2 {
+    font-size: 1.5rem;
+    min-width: 150px;
+  }
+  
+  .calendar-badge {
+    font-size: 0.625rem;
+    padding: 0.125rem 0.25rem;
+  }
+}
+
+/* Tablet (641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .calendar-day {
+    min-height: 120px;
+  }
+  
+  .calendar-badge {
+    font-size: 0.75rem;
+  }
+}
+
+/* Desktop (1025px+) */
+@media (min-width: 1025px) {
+  .calendar-day {
+    min-height: 140px;
+  }
+}
+
+/* ============================================ */
+/* ANIMATIONS */
+/* ============================================ */
+
+/* Smooth transition utility */
+.smooth-transition {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+/* Calendar month transition */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Event item hover animation */
+.event-item {
+  @apply transition-all duration-150 ease-in-out;
+}
+
+.event-item:hover {
+  @apply transform scale-[1.02];
+}
+
+/* ============================================ */
+/* ACCESSIBILITY */
+/* ============================================ */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .calendar-day {
+    @apply border-2 border-foreground;
+  }
+  
+  .calendar-badge {
+    @apply border border-foreground;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .calendar-day,
+  .calendar-badge,
+  .smooth-transition {
+    @apply transition-none;
+  }
+  
+  .calendar-grid {
+    animation: none;
+  }
+  
+  .calendar-day:hover {
+    @apply transform-none;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+.calendar-day:focus-visible,
+.calendar-button:focus-visible,
+.calendar-badge:focus-visible {
+  @apply ring-2 ring-ring ring-offset-2 ring-offset-background;
+}
+
+/* ============================================ */
+/* PRINT STYLES */
+/* ============================================ */
+
+@media print {
+  .calendar-container {
+    @apply shadow-none border-2 border-foreground;
+  }
+  
+  .calendar-navigation {
+    @apply hidden;
+  }
+  
+  .popover-content {
+    @apply hidden;
+  }
+  
+  .calendar-day {
+    @apply border border-foreground bg-background text-foreground;
+  }
+  
+  .calendar-badge {
+    @apply bg-muted text-foreground border border-foreground;
+  }
+  
+  /* Remove hover effects in print */
+  .calendar-day:hover {
+    @apply shadow-none transform-none;
+  }
+}
+
+/* ============================================ */
+/* UTILITY CLASSES */
+/* ============================================ */
+
+/* Calendar specific utilities */
+.calendar-today {
+  @apply border-primary border-2 bg-primary/5;
+}
+
+.calendar-weekend {
+  @apply text-destructive;
+}
+
+.calendar-other-month {
+  @apply bg-muted/50 text-muted-foreground;
+}
+
+.calendar-current-month {
+  @apply bg-background;
+}
+
+/* Event priority indicators */
+.event-high-priority {
+  @apply border-l-4 border-red-500;
+}
+
+.event-medium-priority {
+  @apply border-l-4 border-yellow-500;
+}
+
+.event-low-priority {
+  @apply border-l-4 border-green-500;
+}

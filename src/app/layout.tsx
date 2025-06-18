@@ -20,7 +20,7 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`${besley.className} bg-rbrains-background min-h-screen text-black`}
+        className={`${besley.className} bg-[#f9f5ef] min-h-screen text-black`}
       >
         <div className="mt-10">
           <NavBar />
