@@ -12,12 +12,15 @@ const HomePage = () => {
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        className="px-10 pt-5 pb-4"
+        className="px-10 pt-5 pb-4 text-center md:text-left"
       >
-        <Title text="ABOUT US" textSize="text-[40px]" />
+        <Title text="ABOUT US" textSize="text-2xl md:text-[40px]" />
       </motion.div>
 
-      <div id="Box-image" className="flex flex-row space-x-10 px-12">
+      <div
+        id="Box-image"
+        className="flex flex-col-reverse space-x-0 px-4 md:flex-row md:space-x-10 md:px-12"
+      >
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -26,7 +29,7 @@ const HomePage = () => {
         >
           <BoxComponent
             padding="p-6"
-            textSize="text-[1.7vw]"
+            textSize="text-md md:text-[1.7vw]"
             borderColor="border-[#D66E6D]"
           >
             <p className="font-[SeoulHangang CL] text-center">
@@ -56,7 +59,7 @@ const HomePage = () => {
             src="/home/quote.webp"
             width={400}
             height={250}
-            className="-translate-y-10 object-contain"
+            className="w-3/4 -translate-y-0 object-contain md:w-auto md:-translate-y-10"
           />
         </motion.div>
       </div>
@@ -67,16 +70,16 @@ const HomePage = () => {
         transition={{ duration: 0.3, delay: 0.3 }}
         viewport={{ once: true }}
         id="Mission statement"
-        className="flex flex-col pt-3 pr-20 pl-10"
+        className="flex flex-col p-5 pt-12 md:pr-20 md:pl-10"
       >
-        <div className="flex pt-5 pb-4">
-          <Title text="MISSION STATEMENT" textSize="text-[40px]" />
+        <div className="p-0 text-center md:flex md:pt-5 md:pb-4 md:text-left">
+          <Title text="MISSION STATEMENT" textSize="text-2xl md:text-[40px]" />
         </div>
-        <div className="pt-5">
+        <div className="mx-auto md:mx-0 md:pt-5">
           <BoxComponent
             borderColor="border-[#C485B7]"
             padding="p-6"
-            textSize="text-[1.7vw]"
+            textSize="text-md md:text-[1.7vw]"
           >
             <p className="font-[SeoulHangang CL] text-center">
               R'Brains and Behavior is a student-led psychology club dedicated
@@ -100,14 +103,14 @@ const HomePage = () => {
         id="HOW TO JOIN"
         className="flex-col px-10 pt-5 pb-4"
       >
-        <div className="flex flex-row items-end justify-end pr-10">
-          <Title text="HOW TO JOIN" textSize="text-[40px]" />
+        <div className="text-center md:flex md:flex-row md:items-end md:justify-end md:pr-10 md:text-right">
+          <Title text="HOW TO JOIN" textSize="text-2xl md:text-[40px]" />
         </div>
-        <div className="pt-5 pr-10 pb-10">
+        <div className="md:pt-5 md:pr-10 md:pb-10">
           <BoxComponent
             padding="p-6"
             borderColor="border-[#C485B7]"
-            textSize="text-[2.5vw]"
+            textSize="text-lg md:text-[2.5vw]"
           >
             <div className="font-[SeoulHangang CL] p flex flex-col justify-center space-y-6 pt-8 pb-8 text-center">
               <p>Find us on the Highlander Link:</p>
@@ -132,7 +135,7 @@ const HomePage = () => {
         viewport={{ once: true }}
         className="flex items-center justify-center pt-5"
       >
-        <Title text="WHAT WE DO" textSize="text-[40px]" />
+        <Title text="WHAT WE DO" textSize="text-2xl md:text-[40px]" />
       </motion.div>
 
       <motion.div
@@ -145,7 +148,7 @@ const HomePage = () => {
         <BoxComponent
           borderColor="border-[#C485B7]"
           padding="p-6"
-          textSize="text-[1.7vw]"
+          textSize="text-md md:text-[1.7vw]"
         >
           <p className="font-[SeoulHangang CL] text-center">
             R'Brains brings students together to explore psychology through

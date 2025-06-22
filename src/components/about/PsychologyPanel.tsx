@@ -19,8 +19,8 @@ const Component = () => {
           src={PsychologyPanelMobile}
           alt="Psychology-Panels Logo on Mobile"
           className="object-contain"
-          width={350}
-          height={300}
+          width={250}
+          height={200}
         />
       </div>
     </div>
