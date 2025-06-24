@@ -13,14 +13,14 @@ import {
 
 export function CarouselOrientation() {
   return (
-    <Carousel orientation="horizontal" className="mx-auto w-full max-w-4xl">
-      <CarouselContent className="h-[400px]">
+    <Carousel orientation="horizontal" className="mx-auto w-full max-w-6xl">
+      <CarouselContent className="h-1/3">
         {carousel.map((photo, index) => (
           <CarouselItem
             key={index}
             className="flex basis-full items-center justify-center md:basis-1/2"
           >
-            <div className="flex h-[350px] w-[450px] items-center justify-center">
+            <div className="flex h-[500px] w-full items-center justify-center">
               <Card className="h-full w-full">
                 <CardContent className="relative flex h-full w-full items-center justify-center">
                   <Image
