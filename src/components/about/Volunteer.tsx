@@ -20,8 +20,8 @@ const Component = () => {
           src={VolunteerMobile}
           alt="Volunteer Logo on Mobile"
           className="object-contain"
-          width={350}
-          height={350}
+          width={250}
+          height={250}
         />
       </div>
     </div>
