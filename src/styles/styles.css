@@ -7,318 +7,392 @@
 
 /* Light mode colors */
 :root {
-  /* Primary colors for calendar header and today highlight */
-  --primary: 210 40% 50%;
-  --primary-foreground: 0 0% 98%;
-
-  /* Secondary colors for navigation and accents */
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222 47% 11%;
-
-  /* Destructive for weekends */
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 98%;
-
-  /* Muted colors for other month days */
-  --muted: 210 40% 98%;
-  --muted-foreground: 215 16% 47%;
-
-  /* Accent for hover states */
-  --accent: 210 40% 96%;
-  --accent-foreground: 222 47% 11%;
-
-  /* Border colors */
-  --border: 214 32% 91%;
-  --ring: 215 20% 65%;
-}
-
-/* Dark mode variations */
-.dark {
-  --primary: 210 40% 50%;
-  --primary-foreground: 0 0% 98%;
-
-  --secondary: 217 33% 17%;
-  --secondary-foreground: 210 40% 98%;
-
-  --destructive: 0 63% 31%;
-  --destructive-foreground: 0 0% 98%;
-
-  --muted: 217 33% 17%;
-  --muted-foreground: 215 20% 65%;
-
-  --accent: 217 33% 17%;
-  --accent-foreground: 210 40% 98%;
-
-  --border: 217 33% 17%;
-  --ring: 215 20% 65%;
-}
-
-/* ============================================ */
-/* CALENDAR COMPONENT STYLES */
-/* ============================================ */
-
-/* Calendar container */
-.calendar-container {
-  @apply bg-card border-muted border-4 shadow-lg;
-}
-
-/* Calendar grid animation */
-.calendar-grid {
-  animation: slideIn 0.3s ease-out;
-}
-
-/* Calendar day cells */
-.calendar-day {
-  @apply transition-all duration-200 ease-in-out;
-}
-
-.calendar-day:hover {
-  @apply scale-[1.02] transform shadow-md;
-}
-
-.calendar-day:focus-within {
-  @apply ring-ring ring-offset-background ring-2 ring-offset-2;
-}
-
-/* Navigation buttons */
-.calendar-button {
-  @apply rounded-full transition-colors duration-200;
-}
-
-/* Event badges */
-.calendar-badge {
-  @apply rounded-sm px-2 py-1 text-xs font-medium transition-all duration-150;
-}
-
-.calendar-badge:hover {
-  @apply scale-[1.02] transform;
-}
-
-/* Popover content */
-.calendar-popover .popover-content {
-  @apply border-border w-80 border-2 p-0;
-}
-
-.popover-content {
-  @apply animate-in fade-in-0 zoom-in-95 slide-in-from-left-2;
-}
-
-/* ============================================ */
-/* EVENT TYPE STYLING */
-/* ============================================ */
-
-/* Custom event badge variants */
-.event-badge-work {
-  @apply bg-blue-500 text-white hover:bg-blue-600;
-}
-
-.event-badge-personal {
-  @apply bg-green-500 text-white hover:bg-green-600;
-}
-
-.event-badge-meeting {
-  @apply bg-purple-500 text-white hover:bg-purple-600;
-}
-
-.event-badge-holiday {
-  @apply bg-red-500 text-white hover:bg-red-600;
-}
-
-/* Data attribute styling for event types */
-[data-event-type="work"] {
-  @apply bg-blue-500 hover:bg-blue-600;
-}
-
-[data-event-type="personal"] {
-  @apply bg-green-500 hover:bg-green-600;
-}
-
-[data-event-type="meeting"] {
-  @apply bg-purple-500 hover:bg-purple-600;
-}
-
-[data-event-type="holiday"] {
-  @apply bg-red-500 hover:bg-red-600;
-}
-
-/* ============================================ */
-/* RESPONSIVE DESIGN */
-/* ============================================ */
-
-/* Mobile (max 640px) */
-@media (max-width: 640px) {
-  .calendar-grid {
-    gap: 0.125rem;
+    /* Primary colors for calendar header and today highlight */
+    --primary: 210 40% 50%;
+    --primary-foreground: 0 0% 98%;
+  
+    /* Secondary colors for navigation and accents */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+  
+    /* Destructive for weekends */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+  
+    /* Muted colors for other month days */
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
+  
+    /* Accent for hover states */
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+  
+    /* Border colors */
+    --border: 214 32% 91%;
+    --ring: 215 20% 65%;
   }
-
-  .calendar-day {
-    min-height: 80px;
-    padding: 0.25rem;
+  
+  /* Dark mode variations */
+  .dark {
+    --primary: 210 40% 50%;
+    --primary-foreground: 0 0% 98%;
+  
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+  
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+  
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+  
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+  
+    --border: 217 33% 17%;
+    --ring: 215 20% 65%;
   }
-
-  .calendar-header h1 {
-    font-size: 2rem;
-  }
-
-  .calendar-header h2 {
-    font-size: 1.5rem;
-    min-width: 150px;
-  }
-
-  .calendar-badge {
-    font-size: 0.625rem;
-    padding: 0.125rem 0.25rem;
-  }
-}
-
-/* Tablet (641px - 1024px) */
-@media (min-width: 641px) and (max-width: 1024px) {
-  .calendar-day {
-    min-height: 120px;
-  }
-
-  .calendar-badge {
-    font-size: 0.75rem;
-  }
-}
-
-/* Desktop (1025px+) */
-@media (min-width: 1025px) {
-  .calendar-day {
-    min-height: 140px;
-  }
-}
-
-/* ============================================ */
-/* ANIMATIONS */
-/* ============================================ */
-
-/* Smooth transition utility */
-.smooth-transition {
-  @apply transition-all duration-200 ease-in-out;
-}
-
-/* Calendar month transition */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Event item hover animation */
-.event-item {
-  @apply transition-all duration-150 ease-in-out;
-}
-
-.event-item:hover {
-  @apply scale-[1.02] transform;
-}
-
-/* ============================================ */
-/* ACCESSIBILITY */
-/* ============================================ */
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  .calendar-day {
-    @apply border-foreground border-2;
-  }
-
-  .calendar-badge {
-    @apply border-foreground border;
-  }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  .calendar-day,
-  .calendar-badge,
-  .smooth-transition {
-    @apply transition-none;
-  }
-
-  .calendar-grid {
-    animation: none;
-  }
-
-  .calendar-day:hover {
-    @apply transform-none;
-  }
-}
-
-/* Focus visible for keyboard navigation */
-.calendar-day:focus-visible,
-.calendar-button:focus-visible,
-.calendar-badge:focus-visible {
-  @apply ring-ring ring-offset-background ring-2 ring-offset-2;
-}
-
-/* ============================================ */
-/* PRINT STYLES */
-/* ============================================ */
-
-@media print {
+  
+  /* ============================================ */
+  /* CALENDAR COMPONENT STYLES */
+  /* ============================================ */
+  
+  /* Calendar container */
   .calendar-container {
-    @apply border-foreground border-2 shadow-none;
+    background-color: #ffffff;
+    border: 4px solid #442F2C;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   }
-
-  .calendar-navigation {
-    @apply hidden;
+  
+  /* Calendar grid animation */
+  .calendar-grid {
+    animation: slideIn 0.3s ease-out;
   }
-
-  .popover-content {
-    @apply hidden;
-  }
-
+  
+  /* Calendar day cells */
   .calendar-day {
-    @apply border-foreground bg-background text-foreground border;
+    transition: all 200ms ease-in-out;
   }
-
-  .calendar-badge {
-    @apply bg-muted text-foreground border-foreground border;
-  }
-
-  /* Remove hover effects in print */
+  
   .calendar-day:hover {
-    @apply transform-none shadow-none;
+    transform: scale(1.02);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   }
-}
-
-/* ============================================ */
-/* UTILITY CLASSES */
-/* ============================================ */
-
-/* Calendar specific utilities */
-.calendar-today {
-  @apply border-primary bg-primary/5 border-2;
-}
-
-.calendar-weekend {
-  @apply text-destructive;
-}
-
-.calendar-other-month {
-  @apply bg-muted/50 text-muted-foreground;
-}
-
-.calendar-current-month {
-  @apply bg-background;
-}
-
-/* Event priority indicators */
-.event-high-priority {
-  @apply border-l-4 border-red-500;
-}
-
-.event-medium-priority {
-  @apply border-l-4 border-yellow-500;
-}
-
-.event-low-priority {
-  @apply border-l-4 border-green-500;
-}
+  
+  .calendar-day:focus-within {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px hsl(var(--ring));
+  }
+  
+  /* Navigation buttons */
+  .calendar-button {
+    border-radius: 9999px;
+    transition: background-color 200ms;
+  }
+  
+  /* Event badges */
+  .calendar-badge {
+    border-radius: 0.125rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    transition: all 150ms ease-in-out;
+  }
+  
+  .calendar-badge:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Popover content */
+  .calendar-popover .popover-content {
+    border: 2px solid #442F2C;
+    width: 20rem;
+    padding: 0;
+  }
+  
+  .popover-content {
+    animation: fadeIn 150ms ease-out, zoomIn 150ms ease-out, slideInFromLeft 150ms ease-out;
+  }
+  
+  /* ============================================ */
+  /* EVENT TYPE STYLING */
+  /* ============================================ */
+  
+  /* Custom event badge variants */
+  .event-badge-work {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .event-badge-work:hover {
+    background-color: #2563eb;
+  }
+  
+  .event-badge-personal {
+    background-color: #10b981;
+    color: white;
+  }
+  
+  .event-badge-personal:hover {
+    background-color: #059669;
+  }
+  
+  .event-badge-meeting {
+    background-color: #8b5cf6;
+    color: white;
+  }
+  
+  .event-badge-meeting:hover {
+    background-color: #7c3aed;
+  }
+  
+  .event-badge-holiday {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  .event-badge-holiday:hover {
+    background-color: #dc2626;
+  }
+  
+  /* Data attribute styling for event types */
+  [data-event-type="work"] {
+    background-color: #3b82f6;
+  }
+  
+  [data-event-type="work"]:hover {
+    background-color: #2563eb;
+  }
+  
+  [data-event-type="personal"] {
+    background-color: #10b981;
+  }
+  
+  [data-event-type="personal"]:hover {
+    background-color: #059669;
+  }
+  
+  [data-event-type="meeting"] {
+    background-color: #8b5cf6;
+  }
+  
+  [data-event-type="meeting"]:hover {
+    background-color: #7c3aed;
+  }
+  
+  [data-event-type="holiday"] {
+    background-color: #ef4444;
+  }
+  
+  [data-event-type="holiday"]:hover {
+    background-color: #dc2626;
+  }
+  
+  /* ============================================ */
+  /* RESPONSIVE DESIGN */
+  /* ============================================ */
+  
+  /* Mobile (max 640px) */
+  @media (max-width: 640px) {
+    .calendar-grid {
+      gap: 0.125rem;
+    }
+  
+    .calendar-day {
+      min-height: 80px;
+      padding: 0.25rem;
+    }
+  
+    .calendar-header h1 {
+      font-size: 2rem;
+    }
+  
+    .calendar-header h2 {
+      font-size: 1.5rem;
+      min-width: 150px;
+    }
+  
+    .calendar-badge {
+      font-size: 0.625rem;
+      padding: 0.125rem 0.25rem;
+    }
+  }
+  
+  /* Tablet (641px - 1024px) */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .calendar-day {
+      min-height: 120px;
+    }
+  
+    .calendar-badge {
+      font-size: 0.75rem;
+    }
+  }
+  
+  /* Desktop (1025px+) */
+  @media (min-width: 1025px) {
+    .calendar-day {
+      min-height: 140px;
+    }
+  }
+  
+  /* ============================================ */
+  /* ANIMATIONS */
+  /* ============================================ */
+  
+  /* Smooth transition utility */
+  .smooth-transition {
+    transition: all 200ms ease-in-out;
+  }
+  
+  /* Calendar month transition */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes zoomIn {
+    from { transform: scale(0.95); }
+    to { transform: scale(1); }
+  }
+  
+  @keyframes slideInFromLeft {
+    from { transform: translateX(-0.5rem); }
+    to { transform: translateX(0); }
+  }
+  
+  /* Event item hover animation */
+  .event-item {
+    transition: all 150ms ease-in-out;
+  }
+  
+  .event-item:hover {
+    transform: scale(1.02);
+  }
+  
+  /* ============================================ */
+  /* ACCESSIBILITY */
+  /* ============================================ */
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .calendar-day {
+      border: 2px solid currentColor;
+    }
+  
+    .calendar-badge {
+      border: 1px solid currentColor;
+    }
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .calendar-day,
+    .calendar-badge,
+    .smooth-transition {
+      transition: none;
+    }
+  
+    .calendar-grid {
+      animation: none;
+    }
+  
+    .calendar-day:hover {
+      transform: none;
+    }
+  }
+  
+  /* Focus visible for keyboard navigation */
+  .calendar-day:focus-visible,
+  .calendar-button:focus-visible,
+  .calendar-badge:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px hsl(var(--ring));
+  }
+  
+  /* ============================================ */
+  /* PRINT STYLES */
+  /* ============================================ */
+  
+  @media print {
+    .calendar-container {
+      border: 2px solid currentColor;
+      box-shadow: none;
+    }
+  
+    .calendar-navigation {
+      display: none;
+    }
+  
+    .popover-content {
+      display: none;
+    }
+  
+    .calendar-day {
+      border: 1px solid currentColor;
+      background-color: #fffbf9;
+      color: currentColor;
+    }
+  
+    .calendar-badge {
+      background-color: hsl(var(--muted));
+      color: currentColor;
+      border: 1px solid currentColor;
+    }
+  
+    /* Remove hover effects in print */
+    .calendar-day:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+  
+  /* ============================================ */
+  /* UTILITY CLASSES */
+  /* ============================================ */
+  
+  /* Calendar specific utilities */
+  .calendar-today {
+    border: 2px solid #4B2E29;
+    background-color: rgba(75, 46, 41, 0.05);
+  }
+  
+  .calendar-weekend {
+    color: #dc2626;
+  }
+  
+  .calendar-other-month {
+    background-color: rgba(68, 47, 44, 0.5);
+    color: #6b7280;
+  }
+  
+  .calendar-current-month {
+    background-color: #fffbf9;
+  }
+  
+  /* Event priority indicators */
+  .event-high-priority {
+    border-left: 4px solid #ef4444;
+  }
+  
+  .event-medium-priority {
+    border-left: 4px solid #eab308;
+  }
+  
+  .event-low-priority {
+    border-left: 4px solid #22c55e;
+  }

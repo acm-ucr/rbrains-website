@@ -1,7 +1,6 @@
 // CalendarHeader.tsx
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { IoArrowBackCircleOutline, IoArrowForwardCircleOutline } from "react-icons/io5";
 
 interface CalendarHeaderProps {
   currentDate: Date;
@@ -28,16 +27,10 @@ const CalendarHeader = ({ currentDate, onNavigate }: CalendarHeaderProps) => {
     <div className="text-center">
       {/* Month Navigation */}
       <div className="calendar-navigation mb-4 flex items-center justify-center gap-8">
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={() => onNavigate("prev")}
-          aria-label="Previous month"
-          className="border-border hover:bg-accent calendar-button rounded-full border-2"
-        >
-          <ChevronLeft className="h-4 w-4" />
-        </Button>
-
+        <IoArrowBackCircleOutline 
+        onClick={() => onNavigate("prev")}
+        className="h-12 w-12 md:h-16 md:w-16 cursor-pointer hover:bg-accent rounded-full p-1 transition-colors" 
+      />
         <h2
           className="text-[4.7vw] leading-[1.2] font-extrabold text-white"
           style={{
@@ -48,15 +41,10 @@ const CalendarHeader = ({ currentDate, onNavigate }: CalendarHeaderProps) => {
           {monthNames[currentDate.getMonth()]}
         </h2>
 
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={() => onNavigate("next")}
-          aria-label="Next month"
-          className="border-border hover:bg-accent calendar-button rounded-full border-2"
-        >
-          <ChevronRight className="h-4 w-4" />
-        </Button>
+        <IoArrowForwardCircleOutline 
+        onClick={() => onNavigate("prev")}
+        className="h-12 w-12 md:h-16 md:w-16 cursor-pointer hover:bg-accent rounded-full p-1 transition-colors" 
+      />
       </div>
     </div>
   );

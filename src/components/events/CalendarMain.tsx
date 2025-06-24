@@ -39,20 +39,39 @@ const CalendarMain = () => {
       currentDate.getFullYear(),
     ],
     queryFn: async () => {
-      const response = await fetch(
-        `https://www.googleapis.com/calendar/v3/calendars/${
-          process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMAIL
-        }/events?key=${process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY}&singleEvents=true&orderBy=startTime&timeMin=${new Date(
-          currentDate.getFullYear(),
-          currentDate.getMonth(),
-          1,
-        ).toISOString()}&timeMax=${new Date(
-          currentDate.getFullYear(),
-          currentDate.getMonth() + 1,
-          0,
-        ).toISOString()}`,
-      );
+      // Debug: Check if env variables are loaded
+      console.log("Calendar Email:", process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMAIL);
+      console.log("API Key exists:", !!process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY);
+      
+      const url = `https://www.googleapis.com/calendar/v3/calendars/${
+        process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMAIL
+      }/events?key=${process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY}&singleEvents=true&orderBy=startTime&timeMin=${new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        1,
+      ).toISOString()}&timeMax=${new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth() + 1,
+        0,
+      ).toISOString()}`;
+      
+      console.log("Fetching URL:", url);
+      
+      const response = await fetch(url);
       const data = await response.json();
+      
+      console.log("Response status:", response.status);
+      console.log("Response data:", data);
+      
+      // Check for errors
+      if (!response.ok) {
+        console.error("API Error:", data.error);
+        return [];
+      }
+      
+      // Debug: Log number of events
+      console.log("Number of events found:", data.items?.length || 0);
+      
       return (
         data.items?.map(
           ({

@@ -1,14 +1,10 @@
 // EventPopover.tsx
 import React from "react";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Separator } from "@/components/ui/separator";
-import { CalendarIcon, ClockIcon, MapPinIcon } from "lucide-react";
 import { EventProps } from "./CalendarMain";
 
 interface EventPopoverProps {
@@ -17,6 +13,7 @@ interface EventPopoverProps {
 }
 
 const EventPopover = ({ event, date }: EventPopoverProps) => {
+    const [open, setOpen] = React.useState(false);
   // Parse event times
   let eventStartDate = new Date();
   let eventEndDate = new Date();
@@ -54,101 +51,85 @@ const EventPopover = ({ event, date }: EventPopoverProps) => {
   };
 
   return (
-    <Popover>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Badge
-          variant="default"
-          className="calendar-badge smooth-transition w-full cursor-pointer justify-start truncate text-xs hover:opacity-80"
-        >
-          {event.summary}
-        </Badge>
+        <div className="w-full cursor-pointer">
+          <div className="rounded-full border-2 border-[#F2B7B6] bg-[#FFF5F5] hover:bg-[#FFEDED] transition-colors py-1 px-2">
+            <p className="text-xs font-medium text-[#442F2C] text-center truncate">
+              ☆ {event.summary} ☆
+            </p>
+          </div>
+        </div>
       </PopoverTrigger>
 
       <PopoverContent
-        className="calendar-popover popover-content w-80"
+        className="w-80 md:w-[550px] p-0 overflow-hidden border-none bg-transparent shadow-lg"
         side="right"
         align="start"
       >
-        <Card className="border-0 shadow-none">
-          <CardHeader className="pb-3">
-            <CardTitle className="text-lg">{event.summary}</CardTitle>
-            <div className="text-muted-foreground flex items-center gap-2 text-sm">
-              <CalendarIcon className="h-4 w-4" />
-              {formatDate(date)}
-            </div>
-          </CardHeader>
+        {/* Header */}
+        <div className="bg-[#C8D9E8] px-4 py-3 flex items-center justify-between">
+          <h3 className="text-lg font-semibold text-[#442F2C]">
+            {formatDate(date)} - {event.summary}
+          </h3>
+          <button 
+            onClick={() => setOpen(false)}
+            className="text-[#442F2C] hover:opacity-70 text-3xl"
+          >
+            ×
+          </button>
+        </div>
+        
+        {/* Body */}
+        <div className="bg-[#FFF5F5] px-4 py-4 space-y-3">
+          {/* Location */}
+          <div className="text-[#442F2C]">
+            <p className="text-base">{event.location || "Location/Building"}</p>
+          </div>
+          
+          {/* Time */}
+          <div className="text-[#442F2C]">
+            <p className="text-base">
+              {hasStartTime ? formatTime(eventStartDate) : "00:00 PM"} - {hasEndTime ? formatTime(eventEndDate) : "00:00 PM"}
+            </p>
+          </div>
 
-          <CardContent className="space-y-3">
-            {/* Time Information */}
-            {hasStartTime && (
-              <div className="flex items-center gap-2 text-sm">
-                <ClockIcon className="text-muted-foreground h-4 w-4" />
-                <span>
-                  {formatTime(eventStartDate)}
-                  {hasEndTime && <span> - {formatTime(eventEndDate)}</span>}
-                </span>
+          {/* Attendees */}
+          {event.attendees && event.attendees.length > 0 && (
+            <>
+              <div className="border-t border-[#F2B7B6] pt-3 mt-3">
+                <p className="mb-2 font-medium text-sm text-[#442F2C]">
+                  Attendees ({event.attendees.length})
+                </p>
+                <div className="space-y-1">
+                  {event.attendees.slice(0, 3).map((attendee, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <div
+                        className={`h-2 w-2 rounded-full ${
+                          attendee.responseStatus === "accepted"
+                            ? "bg-green-500"
+                            : attendee.responseStatus === "declined"
+                              ? "bg-red-500"
+                              : attendee.responseStatus === "tentative"
+                                ? "bg-yellow-500"
+                                : "bg-gray-400"
+                        }`}
+                      />
+                      <span className="text-[#442F2C] text-xs">
+                        {attendee.displayName || attendee.email}
+                      </span>
+                    </div>
+                  ))}
+                  {event.attendees.length > 3 && (
+                    <p className="text-[#442F2C]/70 text-xs">
+                      +{event.attendees.length - 3} more
+                    </p>
+                  )}
+                </div>
               </div>
-            )}
-
-            {/* Location */}
-            {event.location && (
-              <>
-                <div className="flex items-center gap-2 text-sm">
-                  <MapPinIcon className="text-muted-foreground h-4 w-4" />
-                  <span>{event.location}</span>
-                </div>
-              </>
-            )}
-
-            {/* Description */}
-            {event.description && (
-              <>
-                <Separator />
-                <div className="text-sm">
-                  <p className="mb-1 font-medium">Description</p>
-                  <p className="text-muted-foreground">{event.description}</p>
-                </div>
-              </>
-            )}
-
-            {/* Attendees */}
-            {event.attendees && event.attendees.length > 0 && (
-              <>
-                <Separator />
-                <div className="text-sm">
-                  <p className="mb-2 font-medium">
-                    Attendees ({event.attendees.length})
-                  </p>
-                  <div className="space-y-1">
-                    {event.attendees.slice(0, 3).map((attendee, index) => (
-                      <div key={index} className="flex items-center gap-2">
-                        <div
-                          className={`h-2 w-2 rounded-full ${
-                            attendee.responseStatus === "accepted"
-                              ? "bg-green-500"
-                              : attendee.responseStatus === "declined"
-                                ? "bg-red-500"
-                                : attendee.responseStatus === "tentative"
-                                  ? "bg-yellow-500"
-                                  : "bg-gray-400"
-                          }`}
-                        />
-                        <span className="text-muted-foreground text-xs">
-                          {attendee.displayName || attendee.email}
-                        </span>
-                      </div>
-                    ))}
-                    {event.attendees.length > 3 && (
-                      <p className="text-muted-foreground text-xs">
-                        +{event.attendees.length - 3} more
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </>
-            )}
-          </CardContent>
-        </Card>
+            </>
+          )}
+        </div>
       </PopoverContent>
     </Popover>
   );
