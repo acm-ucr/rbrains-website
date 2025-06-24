@@ -25,12 +25,12 @@ const CalendarDay = ({ date, currentMonth, events }: CalendarDayProps) => {
     date.getMonth() === today.getMonth() &&
     date.getFullYear() === today.getFullYear();
 
-    const getWeekdayColorClass = (weekday: number) => {
-      if (weekday === 0 || weekday === 6) {
-        return "text-[#D66E6D]"; // Weekend color
-      }
-      return "text-[#442F2C]"; // Weekday color
-    };
+  const getWeekdayColorClass = (weekday: number) => {
+    if (weekday === 0 || weekday === 6) {
+      return "text-[#D66E6D]"; // Weekend color
+    }
+    return "text-[#442F2C]"; // Weekday color
+  };
 
   // Filter events for this specific day
   const dayEvents = events.filter((event) => {
@@ -69,7 +69,7 @@ const CalendarDay = ({ date, currentMonth, events }: CalendarDayProps) => {
 
   return (
     <Card
-      className={`bg-white calendar-day smooth-transition min-h-[100px] border-2 border-[#442F2C] p-2 transition-all duration-200 hover:shadow-md ${!isCurrentMonth ? "text-muted-foreground" : ""} ${isWeekend && isCurrentMonth ? "text-destructive" : ""} ${isToday ? "bg-primary/5 border-2" : ""} `}
+      className={`calendar-day smooth-transition min-h-[100px] border-2 border-[#442F2C] bg-white p-2 transition-all duration-200 hover:shadow-md ${!isCurrentMonth ? "text-muted-foreground" : ""} ${isWeekend && isCurrentMonth ? "text-destructive" : ""} ${isToday ? "bg-primary/5 border-2" : ""} `}
     >
       {/* Date Number */}
       <div className="mb-1 text-right">
@@ -90,32 +90,32 @@ const CalendarDay = ({ date, currentMonth, events }: CalendarDayProps) => {
 
         {hasMoreEvents && (
           <Popover>
-          <PopoverTrigger asChild>
-            <Badge
-              variant="secondary"
-              className="hover:bg-gray-200 calendar-badge w-full cursor-pointer justify-center text-xs"
-            >
-              +{dayEvents.length - maxVisibleEvents} more
-            </Badge>
-          </PopoverTrigger>
-          <PopoverContent className="w-64 p-2 bg-white border-2 border-[#442F2C] shadow-lg">
-            <div className="space-y-1">
-              {dayEvents.slice(maxVisibleEvents).map((event, index) => (
-                <div
-                  key={index}
-                  className="hover:bg-[#fef3c7] rounded p-2 transition-colors"
-                >
-                  <p className="text-sm font-medium text-[#442F2C]">{event.summary}</p>
-                  {event.location && (
-                    <p className="text-gray-500 text-xs">
-                      {event.location}
+            <PopoverTrigger asChild>
+              <Badge
+                variant="secondary"
+                className="calendar-badge w-full cursor-pointer justify-center text-xs hover:bg-gray-200"
+              >
+                +{dayEvents.length - maxVisibleEvents} more
+              </Badge>
+            </PopoverTrigger>
+            <PopoverContent className="w-64 border-2 border-[#442F2C] bg-white p-2 shadow-lg">
+              <div className="space-y-1">
+                {dayEvents.slice(maxVisibleEvents).map((event, index) => (
+                  <div
+                    key={index}
+                    className="rounded p-2 transition-colors hover:bg-[#fef3c7]"
+                  >
+                    <p className="text-sm font-medium text-[#442F2C]">
+                      {event.summary}
                     </p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </PopoverContent>
-        </Popover>
+                    {event.location && (
+                      <p className="text-xs text-gray-500">{event.location}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </PopoverContent>
+          </Popover>
         )}
       </div>
     </Card>

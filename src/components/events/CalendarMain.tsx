@@ -28,10 +28,40 @@ export type EventProps = {
   }>;
 };
 
+// Type definition for Google Calendar API event
+type GoogleCalendarEvent = {
+  start: {
+    dateTime?: string;
+    date?: string;
+  };
+  end: {
+    dateTime?: string;
+    date?: string;
+  };
+  location?: string;
+  description?: string;
+  summary: string;
+  id?: string;
+  htmlLink?: string;
+  colorId?: string;
+  attendees?: Array<{
+    email: string;
+    displayName?: string;
+    responseStatus?: "accepted" | "declined" | "tentative" | "needsAction";
+  }>;
+};
+
+// Type definition for Google Calendar API response
+type GoogleCalendarResponse = {
+  items?: GoogleCalendarEvent[];
+  error?: {
+    message: string;
+  };
+};
+
 const CalendarMain = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
 
-  // Replace this with your existing Google Calendar API logic
   const { data: events, isLoading } = useQuery({
     queryKey: [
       "calendar-events",
@@ -40,9 +70,15 @@ const CalendarMain = () => {
     ],
     queryFn: async () => {
       // Debug: Check if env variables are loaded
-      console.log("Calendar Email:", process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMAIL);
-      console.log("API Key exists:", !!process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY);
-      
+      console.log(
+        "Calendar Email:",
+        process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMAIL,
+      );
+      console.log(
+        "API Key exists:",
+        !!process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY,
+      );
+
       const url = `https://www.googleapis.com/calendar/v3/calendars/${
         process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMAIL
       }/events?key=${process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY}&singleEvents=true&orderBy=startTime&timeMin=${new Date(
@@ -54,24 +90,24 @@ const CalendarMain = () => {
         currentDate.getMonth() + 1,
         0,
       ).toISOString()}`;
-      
+
       console.log("Fetching URL:", url);
-      
+
       const response = await fetch(url);
-      const data = await response.json();
-      
+      const data: GoogleCalendarResponse = await response.json();
+
       console.log("Response status:", response.status);
       console.log("Response data:", data);
-      
+
       // Check for errors
       if (!response.ok) {
         console.error("API Error:", data.error);
         return [];
       }
-      
+
       // Debug: Log number of events
       console.log("Number of events found:", data.items?.length || 0);
-      
+
       return (
         data.items?.map(
           ({
@@ -83,7 +119,7 @@ const CalendarMain = () => {
             id,
             htmlLink,
             attendees,
-          }: any) => ({
+          }: GoogleCalendarEvent) => ({
             start,
             end,
             location,

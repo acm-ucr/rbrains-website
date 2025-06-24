@@ -1,6 +1,9 @@
 // CalendarHeader.tsx
 import React from "react";
-import { IoArrowBackCircleOutline, IoArrowForwardCircleOutline } from "react-icons/io5";
+import {
+  IoArrowBackCircleOutline,
+  IoArrowForwardCircleOutline,
+} from "react-icons/io5";
 
 interface CalendarHeaderProps {
   currentDate: Date;
@@ -27,10 +30,10 @@ const CalendarHeader = ({ currentDate, onNavigate }: CalendarHeaderProps) => {
     <div className="text-center">
       {/* Month Navigation */}
       <div className="calendar-navigation mb-4 flex items-center justify-center gap-8">
-        <IoArrowBackCircleOutline 
-        onClick={() => onNavigate("prev")}
-        className="h-12 w-12 md:h-16 md:w-16 cursor-pointer hover:bg-accent rounded-full p-1 transition-colors" 
-      />
+        <IoArrowBackCircleOutline
+          onClick={() => onNavigate("prev")}
+          className="hover:bg-accent h-12 w-12 cursor-pointer rounded-full p-1 transition-colors md:h-16 md:w-16"
+        />
         <h2
           className="text-[4.7vw] leading-[1.2] font-extrabold text-white"
           style={{
@@ -41,10 +44,10 @@ const CalendarHeader = ({ currentDate, onNavigate }: CalendarHeaderProps) => {
           {monthNames[currentDate.getMonth()]}
         </h2>
 
-        <IoArrowForwardCircleOutline 
-        onClick={() => onNavigate("prev")}
-        className="h-12 w-12 md:h-16 md:w-16 cursor-pointer hover:bg-accent rounded-full p-1 transition-colors" 
-      />
+        <IoArrowForwardCircleOutline
+          onClick={() => onNavigate("prev")}
+          className="hover:bg-accent h-12 w-12 cursor-pointer rounded-full p-1 transition-colors md:h-16 md:w-16"
+        />
       </div>
     </div>
   );

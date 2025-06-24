@@ -13,7 +13,7 @@ interface EventPopoverProps {
 }
 
 const EventPopover = ({ event, date }: EventPopoverProps) => {
-    const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
   // Parse event times
   let eventStartDate = new Date();
   let eventEndDate = new Date();
@@ -54,8 +54,8 @@ const EventPopover = ({ event, date }: EventPopoverProps) => {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <div className="w-full cursor-pointer">
-          <div className="rounded-full border-2 border-[#F2B7B6] bg-[#FFF5F5] hover:bg-[#FFEDED] transition-colors py-1 px-2">
-            <p className="text-xs font-medium text-[#442F2C] text-center truncate">
+          <div className="rounded-full border-2 border-[#F2B7B6] bg-[#FFF5F5] px-2 py-1 transition-colors hover:bg-[#FFEDED]">
+            <p className="truncate text-center text-xs font-medium text-[#442F2C]">
               ☆ {event.summary} ☆
             </p>
           </div>
@@ -63,42 +63,43 @@ const EventPopover = ({ event, date }: EventPopoverProps) => {
       </PopoverTrigger>
 
       <PopoverContent
-        className="w-80 md:w-[550px] p-0 overflow-hidden border-none bg-transparent shadow-lg"
+        className="w-80 overflow-hidden border-none bg-transparent p-0 shadow-lg md:w-[550px]"
         side="right"
         align="start"
       >
         {/* Header */}
-        <div className="bg-[#C8D9E8] px-4 py-3 flex items-center justify-between">
+        <div className="flex items-center justify-between bg-[#C8D9E8] px-4 py-3">
           <h3 className="text-lg font-semibold text-[#442F2C]">
             {formatDate(date)} - {event.summary}
           </h3>
-          <button 
+          <button
             onClick={() => setOpen(false)}
-            className="text-[#442F2C] hover:opacity-70 text-3xl"
+            className="text-3xl text-[#442F2C] hover:opacity-70"
           >
             ×
           </button>
         </div>
-        
+
         {/* Body */}
-        <div className="bg-[#FFF5F5] px-4 py-4 space-y-3">
+        <div className="space-y-3 bg-[#FFF5F5] px-4 py-4">
           {/* Location */}
           <div className="text-[#442F2C]">
             <p className="text-base">{event.location || "Location/Building"}</p>
           </div>
-          
+
           {/* Time */}
           <div className="text-[#442F2C]">
             <p className="text-base">
-              {hasStartTime ? formatTime(eventStartDate) : "00:00 PM"} - {hasEndTime ? formatTime(eventEndDate) : "00:00 PM"}
+              {hasStartTime ? formatTime(eventStartDate) : "00:00 PM"} -{" "}
+              {hasEndTime ? formatTime(eventEndDate) : "00:00 PM"}
             </p>
           </div>
 
           {/* Attendees */}
           {event.attendees && event.attendees.length > 0 && (
             <>
-              <div className="border-t border-[#F2B7B6] pt-3 mt-3">
-                <p className="mb-2 font-medium text-sm text-[#442F2C]">
+              <div className="mt-3 border-t border-[#F2B7B6] pt-3">
+                <p className="mb-2 text-sm font-medium text-[#442F2C]">
                   Attendees ({event.attendees.length})
                 </p>
                 <div className="space-y-1">
@@ -115,13 +116,13 @@ const EventPopover = ({ event, date }: EventPopoverProps) => {
                                 : "bg-gray-400"
                         }`}
                       />
-                      <span className="text-[#442F2C] text-xs">
+                      <span className="text-xs text-[#442F2C]">
                         {attendee.displayName || attendee.email}
                       </span>
                     </div>
                   ))}
                   {event.attendees.length > 3 && (
-                    <p className="text-[#442F2C]/70 text-xs">
+                    <p className="text-xs text-[#442F2C]/70">
                       +{event.attendees.length - 3} more
                     </p>
                   )}
