@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "motion/react";
 // import { gallery } from "../../data/gallery1";
 
 const localGallery = [
@@ -23,7 +25,12 @@ const Gallery = () => {
   return (
     <div className="grid w-full grid-cols-4 items-center justify-center gap-5 p-16">
       {localGallery.map((photo, index) => (
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.02 }}
           key={index}
           className={`flex items-center justify-center overflow-hidden rounded-3xl border-5 border-[#72A0C7] ${index === 0 ? "col-span-2 row-span-2" : ""} ${index === 5 || index === 8 || index === 7 ? "row-span-4" : ""} ${index === 6 || index === 9 ? "row-span-2" : ""} `}
         >
@@ -49,7 +56,7 @@ const Gallery = () => {
               </div>
             )}
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
