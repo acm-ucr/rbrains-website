@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
-import { useState, useEffect } from "react";
 
 const HomeLanding = () => {
   const [delay, setDelay] = useState(1.5);
@@ -10,33 +9,54 @@ const HomeLanding = () => {
   const [logoDelay, setLogoDelay] = useState(1);
 
   const controls = useAnimation();
+  const [animationPlayed, setAnimationPlayed] = useState(false);
 
   useEffect(() => {
-    // Start initial animation for heart beat
-    controls
-      .start({
-        opacity: 1,
-        scale: 1,
-        transition: { delay: 2, duration: 0.4, ease: "easeOut" },
-      })
-      .then(() => {
-        // After it completes, start looping heartbeat pulse
-        controls.start({
-          scale: [1, 1.3, 1],
-          transition: { duration: 1, repeat: Infinity, ease: "easeInOut" },
+    // Check if animation was already played this session
+    const played = sessionStorage.getItem("homeLandingAnimationPlayed");
+    if (played) {
+      // If played, immediately set controls to final state without animating
+      controls.set({ opacity: 1, scale: 1 });
+      setAnimationPlayed(true);
+      setDelay(0);
+      setToDelay(0);
+      setLogoDelay(0);
+    } else {
+      // Run animation then mark played
+      controls
+        .start({
+          opacity: 1,
+          scale: 1,
+          transition: { delay: 2, duration: 0.4, ease: "easeOut" },
+        })
+        .then(() => {
+          controls.start({
+            scale: [1, 1.3, 1],
+            transition: { duration: 1, repeat: Infinity, ease: "easeInOut" },
+          });
+          setAnimationPlayed(true);
+          sessionStorage.setItem("homeLandingAnimationPlayed", "true");
         });
-      });
-  }, []);
+    }
+  }, [controls]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setToDelay(0), toDelay * 1000 + 500);
-    return () => clearTimeout(timer);
-  }, []);
+    if (!animationPlayed) {
+      const timer = setTimeout(() => setToDelay(0), toDelay * 1000 + 500);
+      return () => clearTimeout(timer);
+    } else {
+      setToDelay(0);
+    }
+  }, [animationPlayed, toDelay]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLogoDelay(0), logoDelay * 1000 + 500);
-    return () => clearTimeout(timer);
-  }, []);
+    if (!animationPlayed) {
+      const timer = setTimeout(() => setLogoDelay(0), logoDelay * 1000 + 500);
+      return () => clearTimeout(timer);
+    } else {
+      setLogoDelay(0);
+    }
+  }, [animationPlayed, logoDelay]);
 
   return (
     <div className="bg-rbrains-background">

@@ -1,16 +1,8 @@
 import React from "react";
-import Lab from "@/components/opportunities/Lab";
-import Volunteer from "@/components/opportunities/Volunteering";
-import Club from "@/components/opportunities/Club";
+import Opportunities from "@/components/opportunities/Opportunites";
 
-const Page = () => {
-  return (
-    <div className="w-full space-y-16 px-6 py-16">
-      <Lab />
-      <Volunteer />
-      <Club />
-    </div>
-  );
+const OpportunitiesPage = () => {
+  return <Opportunities />;
 };
 
-export default Page;
+export default OpportunitiesPage;

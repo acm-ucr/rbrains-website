@@ -19,9 +19,9 @@ interface ButtonProps {
 
 const button = ({ text, link, buttonColor }: ButtonProps) => {
   return (
-    <div className="w-full max-w-[302px]">
+    <div className="w-full max-w-[400px] min-w-[300px]">
       <a
-        className={`${buttonColor} font-rbrains flex h-[58px] items-center justify-center rounded-3xl px-4 text-sm font-bold break-words text-white md:text-[32px]`}
+        className={`${buttonColor} font-rbrains flex h-[58px] items-center justify-center rounded-3xl px-4 text-sm font-bold whitespace-nowrap text-white md:text-3xl`}
         href={link}
       >
         {text}
