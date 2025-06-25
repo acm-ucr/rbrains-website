@@ -82,7 +82,7 @@ const HomePage = () => {
         transition={{ duration: 0.3, delay: 0.3 }}
         viewport={{ once: true }}
         id="Mission statement"
-        className="px-5 md:px-10 -mt-16"
+        className="-mt-16 px-5 md:px-10"
       >
         <Title text="MISSION STATEMENT" textSize="text-2xl md:text-[40px]" />
 
