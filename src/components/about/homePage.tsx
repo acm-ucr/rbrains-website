@@ -20,7 +20,7 @@ import { carouselPhotos } from "@/data/carousel";
 
 const HomePage = () => {
   return (
-    <div className="space-y-10">
+    <div className="space-y-4">
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
@@ -82,7 +82,7 @@ const HomePage = () => {
         transition={{ duration: 0.3, delay: 0.3 }}
         viewport={{ once: true }}
         id="Mission statement"
-        className="px-5 pt-12 md:px-10"
+        className="px-5 md:px-10 -mt-16"
       >
         <Title text="MISSION STATEMENT" textSize="text-2xl md:text-[40px]" />
 
