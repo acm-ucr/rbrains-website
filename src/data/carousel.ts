@@ -1,16 +1,16 @@
 import { StaticImageData } from "next/image";
-import one from "@/public/carousel/carousel1.webp";
-import two from "@/public/carousel/carousel2.webp";
-import three from "@/public/carousel/carousel3.webp";
-import four from "@/public/carousel/carousel4.webp";
-import five from "@/public/carousel/carousel5.webp";
+import one from "@/public/Carousel/carousel1.webp";
+import two from "@/public/Carousel/carousel2.webp";
+import three from "@/public/Carousel/carousel3.webp";
+import four from "@/public/Carousel/carousel4.webp";
+import five from "@/public/Carousel/carousel5.webp";
 
 interface Photo {
   src: StaticImageData;
   alt: string;
 }
 
-export const carousel: Photo[] = [
+export const carouselPhotos: Photo[] = [
   {
     src: one,
     alt: "photo 1",

@@ -1,21 +1,21 @@
 import * as React from "react";
 import Image from "next/image";
-import { carousel } from "@/data/carousel";
+import { carouselPhotos } from "@/data/carousel";
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
   CarouselPrevious,
+  CarouselNext,
 } from "@/components/ui/carousel";
 
 export function CarouselOrientation() {
   return (
     <Carousel orientation="horizontal" className="mx-auto w-full max-w-6xl">
       <CarouselContent className="h-1/3">
-        {carousel.map((photo, index) => (
+        {carouselPhotos.map((photo, index) => (
           <CarouselItem
             key={index}
             className="flex basis-full items-center justify-center md:basis-1/2"
