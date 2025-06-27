@@ -6,7 +6,7 @@ import Title from "@/components/ReusableTitle";
 import { useQuery } from "@tanstack/react-query";
 import type { EventProps } from "@/types/calendar";
 import leftSquiggle from "@/public/calendar/leftSideSquiggle.svg";
-import rightSquggle from "@/public/calendar/rightSideSquiggle.png";
+import rightSquggle from "@/public/calendar/rightSideSquiggle.webp";
 
 interface ProcessedEvent {
   name: string;
