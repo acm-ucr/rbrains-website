@@ -1,7 +1,8 @@
 // types/calendar.ts
 // Central type definitions for the calendar system
 
-export interface EventProps {
+// types/calendar.ts
+export type EventProps = {
   start: {
     dateTime?: string;
     date?: string;
@@ -21,7 +22,7 @@ export interface EventProps {
     displayName?: string;
     responseStatus?: "accepted" | "declined" | "tentative" | "needsAction";
   }>;
-}
+};
 
 export interface CalendarDay {
   date: Date;

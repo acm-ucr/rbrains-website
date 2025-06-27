@@ -6,7 +6,6 @@ import Image from "next/image";
 import Button from "@/components/ReuseableButton";
 import { motion } from "motion/react";
 
-// Carousel components
 import {
   Carousel,
   CarouselContent,
@@ -59,7 +58,6 @@ const HomePage = () => {
           </BoxComponent>
         </motion.div>
 
-        {/* Right Image */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
