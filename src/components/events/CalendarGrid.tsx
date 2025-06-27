@@ -1,7 +1,7 @@
 // CalendarGrid.tsx
 import React from "react";
 import CalendarDay from "./CalendarDay";
-import { EventProps } from "./CalendarMain";
+import type { EventProps } from "@/types/calendar";
 
 interface CalendarGridProps {
   currentDate: Date;
@@ -11,11 +11,10 @@ interface CalendarGridProps {
 const CalendarGrid = ({ currentDate, events }: CalendarGridProps) => {
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  // Add the same color function
   const getWeekdayColorClass = (weekday: number) => {
     switch (weekday) {
-      case 0: // Sunday
-      case 6: // Saturday
+      case 0:
+      case 6:
         return "text-[#D66E6D]";
       case 1:
         return "text-[#5F95A7]";
@@ -65,7 +64,7 @@ const CalendarGrid = ({ currentDate, events }: CalendarGridProps) => {
       </div>
 
       {/* Calendar Grid */}
-      <div className="calendar-grid grid grid-cols-7 gap-1">
+      <div className="grid grid-cols-7 gap-1">
         {calendarDays.map((date, index) => (
           <CalendarDay
             key={index}

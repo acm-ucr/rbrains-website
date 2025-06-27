@@ -1,4 +1,3 @@
-// CalendarHeader.tsx
 import React from "react";
 import {
   IoArrowBackCircleOutline,

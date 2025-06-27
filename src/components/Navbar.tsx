@@ -21,11 +21,12 @@ const Navbar: React.FC = () => {
 
   return (
     <div>
-      {/* Desktop View */}
       <div
         className={`font-besley bg-rbrains-background fixed top-0 left-0 z-50 hidden w-full items-center justify-between border-b-2 border-black px-10 py-4 md:flex`}
       >
-        <div className="text-lg font-semibold text-black">UCR R'Brains</div>
+        <Link className="text-lg font-semibold text-black" href="/">
+          UCR R'Brains
+        </Link>
         <div className="flex items-center space-x-8 text-base font-semibold text-black">
           {all_link.map((link) => (
             <Link key={link.name} href={link.href}>
@@ -54,7 +55,6 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* mobile menu */}
       <div className="md:hidden">
         <div
           className={`font-besley bg-rbrains-background fixed top-0 left-0 z-50 flex w-full flex-col border-b-2 border-black px-10 py-3`}
