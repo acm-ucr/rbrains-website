@@ -8,7 +8,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import EventPopover from "./EventPopover";
-import { EventProps } from "./CalendarMain";
+import type { EventProps } from "@/types/calendar";
 
 interface CalendarDayProps {
   date: Date;

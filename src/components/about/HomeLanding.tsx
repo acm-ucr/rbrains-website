@@ -12,17 +12,14 @@ const HomeLanding = () => {
   const [animationPlayed, setAnimationPlayed] = useState(false);
 
   useEffect(() => {
-    // Check if animation was already played this session
     const played = sessionStorage.getItem("homeLandingAnimationPlayed");
     if (played) {
-      // If played, immediately set controls to final state without animating
       controls.set({ opacity: 1, scale: 1 });
       setAnimationPlayed(true);
       setDelay(0);
       setToDelay(0);
       setLogoDelay(0);
     } else {
-      // Run animation then mark played
       controls
         .start({
           opacity: 1,
@@ -82,12 +79,11 @@ const HomeLanding = () => {
           />
         </motion.div>
 
-        {/* main contents */}
         <div className="relative ml-6 flex flex-1 flex-col items-center justify-center">
           <motion.div
             initial={{ y: 200, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.35 }}
             whileHover={{
               scale: 1.05,
             }}
@@ -108,7 +104,7 @@ const HomeLanding = () => {
             <motion.div
               initial={{ y: 200, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: toDelay }}
+              transition={{ duration: 0.35, delay: toDelay }}
               viewport={{ once: true }}
               whileHover={toDelay === 0 ? { scale: 1.05 } : {}}
               id="`TO`text"
@@ -127,7 +123,7 @@ const HomeLanding = () => {
           <motion.div
             initial={{ y: 200, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: logoDelay, duration: 0.5 }}
+            transition={{ delay: logoDelay, duration: 0.35 }}
             viewport={{ once: true }}
             onAnimationEnd={() => setLogoDelay(0)}
             whileHover={logoDelay === 0 ? { scale: 1.05 } : {}}
@@ -146,9 +142,7 @@ const HomeLanding = () => {
             </div>
           </motion.div>
         </div>
-        {/* end of main content */}
 
-        {/* right imgage */}
         <motion.div
           initial={{ opacity: 0, x: 200 }}
           animate={{ opacity: 1, x: 0, rotate: 0 }}

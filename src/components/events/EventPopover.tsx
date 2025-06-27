@@ -1,4 +1,3 @@
-// EventPopover.tsx
 import React from "react";
 import {
   Popover,
@@ -14,7 +13,6 @@ interface EventPopoverProps {
 
 const EventPopover = ({ event, date }: EventPopoverProps) => {
   const [open, setOpen] = React.useState(false);
-  // Parse event times
   let eventStartDate = new Date();
   let eventEndDate = new Date();
   let hasStartTime = false;
@@ -54,7 +52,13 @@ const EventPopover = ({ event, date }: EventPopoverProps) => {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <div className="w-full cursor-pointer">
-          <div className="rounded-full border-2 border-[#F2B7B6] bg-[#FFF5F5] px-2 py-1 transition-colors hover:bg-[#FFEDED]">
+          <div
+            className={`rounded-full border-2 px-2 py-1 transition-colors ${
+              open
+                ? "border-[#93A7C8] bg-[#FFFBF9]"
+                : "border-[#F2B7B6] bg-[#FFF5F5] hover:border-[#93A7C8] hover:bg-[#FFFBF9]"
+            }`}
+          >
             <p className="truncate text-center text-xs font-medium text-[#442F2C]">
               ☆ {event.summary} ☆
             </p>
@@ -67,7 +71,6 @@ const EventPopover = ({ event, date }: EventPopoverProps) => {
         side="right"
         align="start"
       >
-        {/* Header */}
         <div className="flex items-center justify-between bg-[#C8D9E8] px-4 py-3">
           <h3 className="text-lg font-semibold text-[#442F2C]">
             {formatDate(date)} - {event.summary}
@@ -80,14 +83,11 @@ const EventPopover = ({ event, date }: EventPopoverProps) => {
           </button>
         </div>
 
-        {/* Body */}
-        <div className="space-y-3 bg-[#FFF5F5] px-4 py-4">
-          {/* Location */}
+        <div className="space-y-3 bg-[#F9F2E7] px-4 py-4">
           <div className="text-[#442F2C]">
             <p className="text-base">{event.location || "Location/Building"}</p>
           </div>
 
-          {/* Time */}
           <div className="text-[#442F2C]">
             <p className="text-base">
               {hasStartTime ? formatTime(eventStartDate) : "00:00 PM"} -{" "}
@@ -95,10 +95,9 @@ const EventPopover = ({ event, date }: EventPopoverProps) => {
             </p>
           </div>
 
-          {/* Attendees */}
           {event.attendees && event.attendees.length > 0 && (
             <>
-              <div className="mt-3 border-t border-[#F2B7B6] pt-3">
+              <div className="mt-3 border-t border-[#C4DBF0] pt-3">
                 <p className="mb-2 text-sm font-medium text-[#442F2C]">
                   Attendees ({event.attendees.length})
                 </p>
@@ -122,9 +121,9 @@ const EventPopover = ({ event, date }: EventPopoverProps) => {
                     </div>
                   ))}
                   {event.attendees.length > 3 && (
-                    <p className="text-xs text-[#442F2C]/70">
+                    <div className="inline-block text-xs whitespace-nowrap text-gray-500">
                       +{event.attendees.length - 3} more
-                    </p>
+                    </div>
                   )}
                 </div>
               </div>
