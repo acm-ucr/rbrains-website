@@ -80,9 +80,9 @@ const HomePage = () => {
         transition={{ duration: 0.3, delay: 0.3 }}
         viewport={{ once: true }}
         id="Mission statement"
-        className="-mt-16 px-5 md:px-10"
+        className="px-5 md:px-10"
       >
-        <Title text="MISSION STATEMENT" textSize="text-2xl md:text-[40px]" />
+        <Title text="MISSION STATEMENT" textSize="text-2xl md:text-4xl" />
 
         <div className="pt-5">
           <BoxComponent
@@ -140,7 +140,7 @@ const HomePage = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.2 }}
         viewport={{ once: true }}
-        className="relative px-6 pb-20 md:px-16"
+        className="relative hidden px-6 pb-20 md:flex md:px-16"
       >
         <Carousel
           className="w-full overflow-visible px-12"
@@ -169,8 +169,8 @@ const HomePage = () => {
             ))}
           </CarouselContent>
 
-          <CarouselPrevious className="left-2" />
-          <CarouselNext className="right-2" />
+          <CarouselPrevious className="left-2 hidden md:flex" />
+          <CarouselNext className="right-2 hidden md:flex" />
         </Carousel>
       </motion.div>
 

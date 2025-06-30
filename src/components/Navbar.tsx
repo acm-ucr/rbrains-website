@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <div>
+    <>
       <div
         className={`font-besley bg-rbrains-background fixed top-0 left-0 z-50 hidden w-full items-center justify-between border-b-2 border-black px-10 py-4 md:flex`}
       >
@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

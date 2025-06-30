@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import Gallery1 from "@/components/gallery/Gallery1";
 import Gallery2 from "@/components/gallery/Gallery2";

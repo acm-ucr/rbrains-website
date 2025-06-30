@@ -1,7 +1,7 @@
 "use client";
 import React, { useMemo } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Title from "@/components/ReusableTitle";
 import { useQuery } from "@tanstack/react-query";
 import type { EventProps } from "@/types/calendar";
@@ -76,9 +76,9 @@ const UpcomingEventsCalendar = () => {
   };
 
   return (
-    <div className="relative -mt-28 w-full overflow-visible bg-[#f9f5ef] px-3 py-10 md:py-20">
+    <div className="relative -mt-28 w-full overflow-x-clip bg-[#f9f5ef] px-3 py-10 md:py-20">
       <motion.div
-        className="absolute top-64 left-0 z-10 -ml-20 md:block"
+        className="absolute top-64 left-0 z-10 -ml-20 hidden md:block"
         initial={{ opacity: 0, rotate: -20 }}
         whileInView={{ opacity: 1, rotate: -2 }}
         transition={{ duration: 0.8 }}
@@ -92,7 +92,7 @@ const UpcomingEventsCalendar = () => {
         />
       </motion.div>
       <motion.div
-        className="absolute top-48 -right-4 z-10 -mr-20 md:block"
+        className="absolute top-48 -right-4 z-10 -mr-20 hidden md:block"
         initial={{ opacity: 0, rotate: 20 }}
         whileInView={{ opacity: 1, rotate: -2 }}
         transition={{ duration: 0.8 }}

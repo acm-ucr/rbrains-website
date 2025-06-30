@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "motion/react";
 
 const HomeLanding = () => {
   const [delay, setDelay] = useState(1.5);
@@ -56,7 +56,7 @@ const HomeLanding = () => {
   }, [animationPlayed, logoDelay]);
 
   return (
-    <div className="bg-rbrains-background">
+    <div className="bg-rbrains-background overflow-x-clip">
       <div className="flex w-full flex-row pb-10">
         <motion.div
           initial={{ opacity: 0, x: -200 }}

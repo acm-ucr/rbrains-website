@@ -1,4 +1,3 @@
-import React from "react";
 import Opportunities from "@/components/opportunities/Opportunites";
 
 const OpportunitiesPage = () => {
