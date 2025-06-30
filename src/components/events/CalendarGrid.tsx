@@ -1,5 +1,3 @@
-// CalendarGrid.tsx
-import React from "react";
 import CalendarDay from "./CalendarDay";
 import type { EventProps } from "@/types/calendar";
 
@@ -56,7 +54,7 @@ const CalendarGrid = ({ currentDate, events }: CalendarGridProps) => {
         {daysOfWeek.map((day, index) => (
           <div
             key={day}
-            className={`py-2 text-center text-2xl font-semibold ${getWeekdayColorClass(index)}`}
+            className={`py-2 text-center text-lg font-semibold md:text-2xl ${getWeekdayColorClass(index)}`}
           >
             {day}
           </div>

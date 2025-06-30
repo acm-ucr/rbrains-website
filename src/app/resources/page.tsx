@@ -1,11 +1,7 @@
 import Resources from "@/components/resources/UCRServices";
 
 const Page = () => {
-  return (
-    <div>
-      <Resources />
-    </div>
-  );
+  return <Resources />;
 };
 
 export default Page;
