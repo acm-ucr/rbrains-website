@@ -23,6 +23,7 @@ const button = ({ text, link, buttonColor }: ButtonProps) => {
       <a
         className={`${buttonColor} font-rbrains flex h-[58px] items-center justify-center rounded-3xl px-4 text-sm font-bold whitespace-nowrap text-white md:text-3xl`}
         href={link}
+        target="_blank"
       >
         {text}
       </a>

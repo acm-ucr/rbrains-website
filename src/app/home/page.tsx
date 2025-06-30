@@ -1,12 +1,7 @@
-import React from "react";
 import HomeLanding from "@/components/about/HomeLanding";
 
-const ServPage = () => {
-  return (
-    <div>
-      <HomeLanding />
-    </div>
-  );
+const Page = () => {
+  return <HomeLanding />;
 };
 
-export default ServPage;
+export default Page;

@@ -13,12 +13,14 @@ import Ten from "@/public/gallerysection1/PsychBehindMusic10.webp";
 interface Photo {
   src: StaticImageData;
   alt: string;
+  label?: string;
 }
 
-export const gallery: Photo[] = [
+const gallery: Photo[] = [
   {
     src: One,
     alt: "photo 1",
+    label: "Psych Behind Music",
   },
   {
     src: Two,
@@ -57,3 +59,4 @@ export const gallery: Photo[] = [
     alt: "photo 10",
   },
 ];
+export default gallery;

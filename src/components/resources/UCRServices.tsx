@@ -1,13 +1,12 @@
 "use client";
-import React from "react";
 import Button from "@/components/ReuseableButton";
 import BoxComponent from "@/components/ReusableBox";
 import Title from "@/components/ReusableTitle";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const ResourceServices = () => {
   return (
-    <div>
+    <div className="overflow-x-clip">
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}

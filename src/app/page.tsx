@@ -6,15 +6,15 @@ import HomeLanding from "@/components/about/HomeLanding";
 
 const Home = () => {
   return (
-    <div className="w-full">
+    <>
       <HomeLanding />
       <AboutUs />
-      <div className="flex flex-col items-center gap-10 md:flex-row md:justify-center md:gap-40">
+      <div className="flex gap-10 md:flex-row md:justify-center md:gap-40">
         <Pyschology />
         <MindStar />
         <Volunteer />
       </div>
-    </div>
+    </>
   );
 };
 export default Home;

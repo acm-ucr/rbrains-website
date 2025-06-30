@@ -4,7 +4,7 @@ import Button from "@/components/ReuseableButton";
 import BoxComponent from "@/components/ReusableBox";
 import Title from "@/components/ReusableTitle";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import image1 from "@/public/Opportunities/Lab Coat.webp";
 import image2 from "@/public/Opportunities/Brainstorm Skill.webp";
 import image3 from "@/public/Opportunities/Trust.webp";
