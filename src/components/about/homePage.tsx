@@ -29,12 +29,27 @@ const HomePage = () => {
         <Title text="ABOUT US" textSize="text-2xl md:text-[40px]" />
       </motion.div>
 
-      <div className="flex flex-col-reverse gap-6 px-4 md:flex-row md:gap-10 md:px-12">
+      <div className="flex flex-col gap-6 px-4 md:flex-row-reverse md:gap-10 md:px-12">
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="order-2 flex items-center justify-center md:order-1 md:basis-[35%]"
+        >
+          <Image
+            alt="Serena Williams quote"
+            src="/home/quote.webp"
+            width={400}
+            height={250}
+            className="w-3/4 object-contain md:w-auto md:-translate-y-10"
+          />
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="md:basis-[65%]"
+          className="order-1 md:order-2 md:basis-[65%]"
         >
           <BoxComponent
             padding="p-6"
@@ -57,21 +72,6 @@ const HomePage = () => {
             </div>
           </BoxComponent>
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex items-center justify-center md:basis-[35%]"
-        >
-          <Image
-            alt="Serena Williams quote"
-            src="/home/quote.webp"
-            width={400}
-            height={250}
-            className="w-3/4 object-contain md:w-auto md:-translate-y-10"
-          />
-        </motion.div>
       </div>
 
       <motion.div
@@ -80,7 +80,7 @@ const HomePage = () => {
         transition={{ duration: 0.3, delay: 0.3 }}
         viewport={{ once: true }}
         id="Mission statement"
-        className="px-5 md:px-10"
+        className="px-5 text-center md:px-10 md:text-left"
       >
         <Title text="MISSION STATEMENT" textSize="text-2xl md:text-4xl" />
 
@@ -111,7 +111,7 @@ const HomePage = () => {
         id="HOW TO JOIN"
         className="px-10"
       >
-        <div className="text-right">
+        <div className="text-center md:text-right">
           <Title text="HOW TO JOIN" textSize="text-2xl md:text-[40px]" />
         </div>
 

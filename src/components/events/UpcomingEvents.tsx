@@ -43,13 +43,14 @@ const UpcomingEventsCalendar = () => {
     ];
     const validEvents = events.filter(hasValidDate);
 
-    return validEvents.slice(0, 3).map((event, index) => {
+    // Prepare up to 3 real events first
+    const processedEvents = validEvents.slice(0, 3).map((event, index) => {
       const startDate = new Date(
         event.start.dateTime || event.start.date || "",
       );
       return {
-        name: event.summary,
-        location: event.location || "TBD",
+        name: event.summary || "Summary: TBA",
+        location: event.location || "Location: TBA",
         time: event.start.dateTime
           ? startDate.toLocaleTimeString("en-US", {
               hour: "numeric",
@@ -67,6 +68,19 @@ const UpcomingEventsCalendar = () => {
         startDate,
       };
     });
+    while (processedEvents.length < 3) {
+      const index = processedEvents.length;
+      processedEvents.push({
+        name: "TBA",
+        location: "TBA",
+        time: "TBA",
+        date: "TBA",
+        cloudColor: cloudColors[index % 3],
+        startDate: new Date(),
+      });
+    }
+
+    return processedEvents;
   }, [events]);
 
   const cloudPaths: Record<"purple" | "blue" | "red", string> = {
@@ -130,13 +144,13 @@ const UpcomingEventsCalendar = () => {
             }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-            className={`relative mb-20 flex w-full cursor-pointer items-center justify-center ${
+            className={`relative mb-0 flex w-full cursor-pointer items-center justify-center md:mb-20 ${
               index % 3 === 0
-                ? "translate-x-16 -translate-y-10"
+                ? "md:translate-x-16 md:-translate-y-10"
                 : index % 3 === 1
-                  ? "translate-x-80 -translate-y-40"
+                  ? "md:translate-x-80 md:-translate-y-40"
                   : index % 3 === 2
-                    ? "-translate-x-44 translate-y-24"
+                    ? "md:-translate-x-44 md:translate-y-24"
                     : ""
             }`}
             style={{ minHeight: "280px", height: "auto" }}
@@ -154,7 +168,7 @@ const UpcomingEventsCalendar = () => {
                 src={cloudPaths[event.cloudColor]}
                 width={700}
                 height={450}
-                className="max-w-none object-contain"
+                className="h-[320px] w-[400px] object-contain md:h-[450px] md:w-[700px]"
                 alt="Event Cloud"
               />
             </motion.div>
