@@ -5,7 +5,7 @@ import gallery from "@/data/gallery1";
 
 const Gallery = () => {
   return (
-    <div className="grid w-full grid-cols-4 items-center justify-center gap-5 p-16">
+    <div className="grid w-full grid-cols-2 items-center justify-center gap-5 p-16 md:grid-cols-4">
       {gallery.map((photo, index) => (
         <motion.div
           initial={{ opacity: 0, y: -20 }}

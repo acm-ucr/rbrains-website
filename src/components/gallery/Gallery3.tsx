@@ -20,7 +20,7 @@ const localGallery = [
 
 const Gallery2 = () => {
   return (
-    <div className="grid w-full auto-rows-[300px] grid-cols-7 gap-5 p-16">
+    <div className="grid w-full auto-rows-[300px] grid-cols-2 gap-5 p-16 md:grid-cols-7">
       {localGallery.map((photo, index) => (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -29,7 +29,7 @@ const Gallery2 = () => {
           viewport={{ once: true }}
           whileHover={{ scale: 1.02 }}
           key={index}
-          className={`relative h-full w-full overflow-hidden rounded-3xl border-4 border-[#B64D4C] ${index === 0 ? "col-span-3 row-span-2" : ""} ${index === 3 ? "col-span-4" : ""} ${index === 4 ? "col-span-3" : ""} ${index === 1 || index === 2 || index === 5 || index === 6 ? "col-span-2" : ""}`}
+          className={`relative h-full w-full overflow-hidden rounded-3xl border-4 border-[#B64D4C] ${index === 0 ? "col-span-3 row-span-1 md:col-span-3 md:row-span-2" : ""} ${index === 3 ? "col-span-3 md:col-span-4" : ""} ${index === 4 ? "col-span-3" : ""} ${index === 1 || index === 2 || index === 5 || index === 6 ? "md:col-span-2" : ""}`}
         >
           <Image
             src={photo.src}

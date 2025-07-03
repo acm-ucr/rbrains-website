@@ -19,7 +19,7 @@ const Component = () => {
         <Image
           src={VolunteerMobile}
           alt="Volunteer Logo on Mobile"
-          className="object-contain"
+          className="mt-4 object-contain"
           width={250}
           height={250}
         />

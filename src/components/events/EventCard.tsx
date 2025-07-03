@@ -41,22 +41,18 @@ const EventCard = ({
   return (
     <div className="mb-[13vw] flex justify-center md:mb-[18vh]">
       <div className="relative h-[22vw] w-[65vw] bg-white pt-[2vh] md:h-[18vw] md:w-[50vw] md:pt-[8vh]">
-        {/* Event Title */}
         <p className="pl-[35%] text-lg leading-none font-bold text-[#442F2C] md:text-[3.25vw]">
           {title}
         </p>
 
-        {/* Location */}
         <p className="text-md pt-1 pl-[36%] leading-none text-[#442F2C] md:text-xl">
           {location || "No location"}
         </p>
 
-        {/* Description */}
         <p className="z-50 hidden pt-2 pl-[36%] text-xs leading-none text-[#442F2C] md:flex md:text-[1vw]">
           {description ?? "No description"}
         </p>
 
-        {/* Cloud SVG background with date and time */}
         <div
           className={`absolute top-0 left-[-10%] h-[22vw] w-[22vw] rotate-45 md:h-[18vw] md:w-[18vw]`}
         >
