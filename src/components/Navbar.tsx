@@ -45,9 +45,10 @@ const Navbar: React.FC = () => {
             </Link>
           ))}
           <div className="pb-2">
-            <Link
-              href="\somelinkforjoin"
+            <Link // second join link
+              href="https://docs.google.com/forms/d/e/1FAIpQLScFZYwIsAB4--JiCCUAb9awvWMF0JC5W_WjXcpFCVL9vtDKhw/viewform"
               className="flex items-center justify-center rounded-2xl border-2 border-[#846FA8] px-7 py-2 font-semibold text-black"
+              target="_blank"
             >
               Join
             </Link>
@@ -89,9 +90,10 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
 
-            <Link
-              href="\somelinkforjoin"
+            <Link // join link there's two btw
+              href="https://docs.google.com/forms/d/e/1FAIpQLScFZYwIsAB4--JiCCUAb9awvWMF0JC5W_WjXcpFCVL9vtDKhw/viewform"
               className="rounded-xl border-2 border-[#846FA8] px-4 py-1 font-semibold text-black"
+              target="_blank"
             >
               Join
             </Link>

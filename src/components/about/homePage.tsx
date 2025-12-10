@@ -95,9 +95,11 @@ const HomePage = () => {
               to creating an inclusive environment for anyone interested in
               psychology. We provide a space to explore diverse topics, engage
               in related activities, and connect with like-minded individuals.
-              Our mission is to support members' educational and professional
-              growth by offering networking opportunities, career development,
-              and resources.
+              Our mission is to support members' educational, professional, and
+              personal growth by offering networking opportunities, career
+              development, and resources. Through events with UCR staff and
+              alumni, we aim to foster a strong community and help members
+              discover and expand their focus within the field of psychology.
             </p>
           </BoxComponent>
         </div>
