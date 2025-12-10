@@ -1,6 +1,6 @@
 "use client";
 
-import { FaMailchimp, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLink } from "react-icons/fa6";
 import Link from "next/link";
