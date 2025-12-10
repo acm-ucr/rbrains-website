@@ -1,9 +1,10 @@
 "use client";
 
-import { FaMailchimp } from "react-icons/fa";
+import { FaMailchimp, FaLinkedin } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLink } from "react-icons/fa6";
 import Link from "next/link";
+/* import { SiLinktree } from "react-icons/si"; */
 
 const Footer = () => {
   return (
@@ -18,7 +19,9 @@ const Footer = () => {
         >
           <AiFillInstagram className="text-5xl text-yellow-950 transition-transform hover:scale-110" />
         </Link>
-
+        <Link href="https://www.linkedin.com/groups/16253029/" target="_blank">
+          <FaLinkedin className="text-4xl text-yellow-950 transition-transform hover:scale-110" />
+        </Link>
         <Link
           href="https://highlanderlink.ucr.edu/organization/rbrains"
           target="_blank"
@@ -26,14 +29,9 @@ const Footer = () => {
         >
           <FaLink className="text-4xl text-yellow-950 transition-transform hover:scale-110" />
         </Link>
-
-        <Link
-          href="https://docs.google.com/forms/d/1R4oxeOC3CpATipMxl3J4olg6IimapSmRxj0kGZL_uZE/viewform?edit_requested=true"
-          target="_blank"
-          aria-label="Mailchimp"
-        >
-          <FaMailchimp className="text-5xl text-yellow-950 transition-transform hover:scale-110" />
-        </Link>
+        {/* <Link target="_blank" href="linktr.ee/rbrainsandbehavior25">
+          <SiLinktree className="text-4xl text-yellow-950 transition-transform hover:scale-110" />
+        </Link> */}
       </div>
     </footer>
   );
