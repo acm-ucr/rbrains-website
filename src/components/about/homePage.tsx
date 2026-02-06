@@ -57,10 +57,15 @@ const HomePage = () => {
             borderColor="border-[#D66E6D]"
           >
             <p className="font-[SeoulHangang CL] text-center">
-              R’Brains is a psychology-focused club at UCR dedicated to
-              fostering curiosity and engagement in the field of psychology. We
-              provide a space for students to explore psychological topics,
-              connect with professionals, and support mental well-being.
+              R'Brains and Behavior is a student-led psychology club dedicated
+              to creating an inclusive environment for anyone interested in
+              psychology. We provide a space to explore diverse topics, engage
+              in related activities, and connect with like-minded individuals.
+              Our mission is to support members' educational, professional, and
+              personal growth by offering networking opportunities, career
+              development, and resources. Through events with UCR staff and
+              alumni, we aim to foster a strong community and help members
+              discover and expand their focus within the field of psychology.
             </p>
 
             <div className="flex justify-center pt-10">
