@@ -1,14 +1,14 @@
-import Rishitha from "@/public/board/Rishitha_Mahi_Kona.jpg";
-import Angie from "@/public/board/Angie_Santander_Salazar.jpg";
-import Sagey from "@/public/board/Sagey_Moorjani.jpg";
-import Abby from "@/public/board/Abby_Lazar.jpg";
-import Shriya from "@/public/board/Shriya_Patel.jpg";
-import Aazaan from "@/public/board/Aazaan_Chhabra.jpg";
-import Mary from "@/public/board/Mary_Abdou.jpg";
-import Edith from "@/public/board/Edith_Rodriguez.jpg";
-import Joseph from "@/public/board/Joseph_Ashkar.jpg";
-import Yami from "@/public/board/Yami_Ramirez_Rosales.jpg";
-import Myra from "@/public/board/Myra_Perialde.jpg";
+import Rishitha from "@/public/board/Rishitha_Mahi_Kona.webp";
+import Angie from "@/public/board/Angie_Santander_Salazar.webp";
+import Sagey from "@/public/board/Sagey_Moorjani.webp";
+import Abby from "@/public/board/Abby_Lazar.webp";
+import Shriya from "@/public/board/Shriya_Patel.webp";
+import Aazaan from "@/public/board/Aazaan_Chhabra.webp";
+import Mary from "@/public/board/Mary_Abdou.webp";
+import Edith from "@/public/board/Edith_Rodriguez.webp";
+import Joseph from "@/public/board/Joseph_Ashkar.webp";
+import Yami from "@/public/board/Yami_Ramirez_Rosales.webp";
+import Myra from "@/public/board/Myra_Perialde.webp";
 
 import { StaticImageData } from "next/image";
 
