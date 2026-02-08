@@ -1,11 +1,15 @@
-import Rishitha from "@/public/board/Rishitha_Kona.webp";
-import Abby from "@/public/board/Abby_Lazar.webp";
+import Rishitha from "@/public/board/Rishitha_Mahi_Kona.webp";
+import Angie from "@/public/board/Angie_Santander_Salazar.webp";
 import Sagey from "@/public/board/Sagey_Moorjani.webp";
+import Abby from "@/public/board/Abby_Lazar.webp";
 import Shriya from "@/public/board/Shriya_Patel.webp";
-import Catherine from "@/public/board/Catherine_Sanchez.webp";
-import Alexa from "@/public/board/Alexa_Zelaya.webp";
-import Alexander from "@/public/board/Alexander_Tang.webp";
-import Angie from "@/public/board/Angie_Santander.webp";
+import Aazaan from "@/public/board/Aazaan_Chhabra.webp";
+import Mary from "@/public/board/Mary_Abdou.webp";
+import Edith from "@/public/board/Edith_Rodriguez.webp";
+import Joseph from "@/public/board/Joseph_Ashkar.webp";
+import Yami from "@/public/board/Yami_Ramirez_Rosales.webp";
+import Myra from "@/public/board/Myra_Perialde.webp";
+
 import { StaticImageData } from "next/image";
 
 export interface BoardMember {
@@ -20,57 +24,78 @@ export const mainBoard: BoardMember[] = [
   {
     position: "President",
     imageSrc: Rishitha,
-    name: "Rishitha Kona",
+    name: "Rishitha Mahi Kona",
     pronouns: "she/her/hers",
-    info: "3rd year Psychology and Business major",
+    info: "4rd year Psychology and Business major, Cognitive",
   },
   {
-    position: "Secretary",
-    imageSrc: Abby,
-    name: "Abby Lazar",
+    position: "Vice President",
+    imageSrc: Angie,
+    name: "Angie Santander Salazar",
     pronouns: "she/her/hers",
-    info: "3rd year Psychology major, TFDP Film minor",
+    info: "3rd year Psychology, Developmental",
   },
   {
     position: "Treasurer",
     imageSrc: Sagey,
     name: "Sagey Moorjani",
     pronouns: "she/her/hers",
-    info: "2nd year Psychology major",
+    info: "3nd year Psychology major, Clinical",
   },
   {
-    position: "Public Relations",
+    position: "Social Media Chair",
+    imageSrc: Abby,
+    name: "Abby Lazar",
+    pronouns: "she/her/hers",
+    info: "4th year Psychology major, Social",
+  },
+  {
+    position: "Public Relations Chair",
     imageSrc: Shriya,
     name: "Shriya Patel",
     pronouns: "she/her/hers",
-    info: "3rd-year Psychology major",
+    info: "4th year Psychology major, Cognitive/Clinical",
   },
   {
-    position: "Social Media Director",
-    imageSrc: Catherine,
-    name: "Catherine Sanchez",
+    position: "Secretary",
+    imageSrc: Aazaan,
+    name: "Aazaan Chhabra",
     pronouns: "she/her/hers",
-    info: "4th year Psychology major, Public Policy minor",
+    info: "3rd year Psychology major, Clinical",
   },
   {
     position: "Social Media Committee",
-    imageSrc: Alexa,
-    name: "Alexa Zelaya",
+    imageSrc: Mary,
+    name: "Mary Abdou",
     pronouns: "she/her/hers",
-    info: "3rd year Psychology major, Education minor",
+    info: "2nd year Psychology major, Personality",
   },
   {
-    position: "Coordinator",
-    imageSrc: Angie,
-    name: "Angie Santander",
+    position: "Social Media Committee",
+    imageSrc: Edith,
+    name: "Edith Rodriguez",
     pronouns: "she/her/hers",
-    info: "2nd year Psychology major",
+    info: "3rd year Psychology major, Personality",
   },
   {
-    position: "Representative",
-    imageSrc: Alexander,
-    name: "Alexander Tang",
+    position: "Club Representative/Mentor",
+    imageSrc: Joseph,
+    name: "Joseph Ashkar",
     pronouns: "he/him/his",
-    info: "1st year Psychology major",
+    info: "4th year Psychology major, Criminal",
+  },
+  {
+    position: "Club Representative/Mentor",
+    imageSrc: Yami,
+    name: "Yami Ramirez Rosales",
+    pronouns: "she/her/hers",
+    info: "4th year Psychology major, Personality/Cognitive",
+  },
+  {
+    position: "Club Representative/Mentor",
+    imageSrc: Myra,
+    name: "Myra Perialde",
+    pronouns: "she/her/hers",
+    info: "3rd year Psychology major, Social/Personality",
   },
 ];
