@@ -13,6 +13,8 @@ const Page = () => {
   const [isGallery2Visible, setIsGallery2Visible] = useState(false);
   return (
     <div>
+      <title>UCR R'Brains - Gallery</title>
+      <meta name="description" content="UCR R'Brains" />
       <Gallery1 />
       <Gallery2 />
       {!isGallery2Visible && (
