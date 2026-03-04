@@ -27,16 +27,7 @@ const Gallery3 = () => {
           viewport={{ once: true }}
           whileHover={{ scale: 1.02 }}
           key={index}
-          className={`relative h-full w-full overflow-hidden rounded-3xl border-4 border-[#9C66A5] 
-            ${index === 0 ? "col-span-4 md:col-span-4 md:row-span-2" : ""} 
-            ${index === 1 ? "col-span-5 md:col-span-5 md:row-span-3" : ""} 
-            ${index === 2 || index === 3 ? "col-span-9 row-span-2 md:col-span-2 md:row-span-1" : ""} 
-            ${index === 4 ? "col-span-4 md:col-span-4 md:row-span-2" : ""} 
-            ${index === 5 ? "col-span-5 md:col-span-5 md:row-span-2" : ""}
-            ${index === 6 ? "col-span-3 md:col-span-3 md:row-span-2" : ""}
-            ${index === 7 ? "col-span-3 md:col-span-3 md:row-span-2" : ""}
-            ${index === 8 ? "col-span-3 md:col-span-3 md:row-span-2" : ""}
-            `}
+          className={`relative h-full w-full overflow-hidden rounded-3xl border-4 border-[#9C66A5] ${index === 0 ? "col-span-4 md:col-span-4 md:row-span-2" : ""} ${index === 1 ? "col-span-5 md:col-span-5 md:row-span-3" : ""} ${index === 2 || index === 3 ? "col-span-9 row-span-2 md:col-span-2 md:row-span-1" : ""} ${index === 4 ? "col-span-4 md:col-span-4 md:row-span-2" : ""} ${index === 5 ? "col-span-5 md:col-span-5 md:row-span-2" : ""} ${index === 6 ? "col-span-3 md:col-span-3 md:row-span-2" : ""} ${index === 7 ? "col-span-3 md:col-span-3 md:row-span-2" : ""} ${index === 8 ? "col-span-3 md:col-span-3 md:row-span-2" : ""} `}
         >
           <Image
             src={photo.src}

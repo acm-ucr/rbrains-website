@@ -16,7 +16,6 @@ const localGallery = [
   { src: "/gallerysection6/soluna7.webp", label: "", alt: "" },
   { src: "/gallerysection6/soluna5.jpg", label: "", alt: "" },
   { src: "/gallerysection6/soluna8.jpg", label: "", alt: "" },
-  
 ];
 
 const Gallery2 = () => {
@@ -30,12 +29,7 @@ const Gallery2 = () => {
           viewport={{ once: true }}
           whileHover={{ scale: 1.02 }}
           key={index}
-          className={`relative h-full w-full overflow-hidden rounded-3xl border-4 border-[#B64D4C] 
-            ${index === 0 ? "col-span-2 row-span-1 md:col-span-3 md:row-span-2" : ""} 
-            ${index === 3 ? "col-span-2 md:col-span-2" : ""} 
-            ${index === 4 ? "col-span-1 md:col-span-2 row-span-2" : ""} 
-            ${index === 1 || index === 2 || index === 5 ? "col-span-1 md:col-span-2" : ""}
-            ${index === 6 ? "md:col-span-3" : ""}`}
+          className={`relative h-full w-full overflow-hidden rounded-3xl border-4 border-[#B64D4C] ${index === 0 ? "col-span-2 row-span-1 md:col-span-3 md:row-span-2" : ""} ${index === 3 ? "col-span-2 md:col-span-2" : ""} ${index === 4 ? "col-span-1 row-span-2 md:col-span-2" : ""} ${index === 1 || index === 2 || index === 5 ? "col-span-1 md:col-span-2" : ""} ${index === 6 ? "md:col-span-3" : ""}`}
         >
           <Image
             src={photo.src}

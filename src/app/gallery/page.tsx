@@ -17,8 +17,8 @@ const Page = () => {
     <div>
       <title>UCR R'Brains - Gallery</title>
       <meta name="description" content="UCR R'Brains" />
-      <Gallery5/>
-      <Gallery6/>
+      <Gallery5 />
+      <Gallery6 />
       <Gallery1 />
       <Gallery2 />
       {!isGallery2Visible && (
