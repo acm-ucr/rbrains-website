@@ -11,9 +11,9 @@ const localGallery = [
   { src: "/gallerysection4/horror4.webp", label: "", alt: "" },
   { src: "/gallerysection4/horror5.webp", label: "", alt: "" },
   { src: "/gallerysection4/horror6.webp", label: "", alt: "" },
-  { src: "/gallerysection4/horror7.jpg", label: "", alt: "" },
-  { src: "/gallerysection4/horror8.jpg", label: "", alt: "" },
-  { src: "/gallerysection4/horror9.jpg", label: "", alt: "" },
+  { src: "/gallerysection4/horror7.webp", label: "", alt: "" },
+  { src: "/gallerysection4/horror8.webp", label: "", alt: "" },
+  { src: "/gallerysection4/horror9.webp", label: "", alt: "" },
 ];
 
 const Gallery3 = () => {
