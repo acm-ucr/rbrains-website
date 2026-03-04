@@ -8,11 +8,21 @@ import Gallery1 from "@/components/gallery/Gallery1";
 import Gallery2 from "@/components/gallery/Gallery2";
 import Gallery3 from "@/components/gallery/Gallery3";
 import Gallery4 from "@/components/gallery/Gallery4";
+import Gallery5 from "@/components/gallery/Gallery5";
+import Gallery6 from "@/components/gallery/Gallery6";
+import Gallery7 from "@/components/gallery/Gallery7";
+import Gallery8 from "@/components/gallery/Gallery8";
 
 const Page = () => {
   const [isGallery2Visible, setIsGallery2Visible] = useState(false);
   return (
     <div>
+      <title>UCR R'Brains - Gallery</title>
+      <meta name="description" content="UCR R'Brains" />
+      <Gallery5 />
+      <Gallery6 />
+      <Gallery8 />
+      <Gallery7 />
       <Gallery1 />
       <Gallery2 />
       {!isGallery2Visible && (
