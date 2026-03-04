@@ -5,15 +5,9 @@ import { motion } from "motion/react";
 // import { gallery } from "../../data/gallery4";
 
 const localGallery = [
-  { src: "/gallerysection4/horror1.webp", label: "", alt: "" },
-  { src: "/gallerysection4/horror2.webp", label: "Psyc’d for Horror", alt: "" },
-  { src: "/gallerysection4/horror3.webp", label: "", alt: "" },
-  { src: "/gallerysection4/horror4.webp", label: "", alt: "" },
-  { src: "/gallerysection4/horror5.webp", label: "", alt: "" },
-  { src: "/gallerysection4/horror6.webp", label: "", alt: "" },
-  { src: "/gallerysection4/horror7.jpg", label: "", alt: "" },
-  { src: "/gallerysection4/horror8.jpg", label: "", alt: "" },
-  { src: "/gallerysection4/horror9.jpg", label: "", alt: "" },
+  { src: "/gallerysection5/GM1.jpg", label: "", alt: "" },
+  { src: "/gallerysection5/GM2.jpg", label: "General Meetings", alt: "" },
+  { src: "/gallerysection5/GM3.jpg", label: "", alt: "" }
 ];
 
 const Gallery3 = () => {
@@ -30,12 +24,7 @@ const Gallery3 = () => {
           className={`relative h-full w-full overflow-hidden rounded-3xl border-4 border-[#9C66A5] 
             ${index === 0 ? "col-span-4 md:col-span-4 md:row-span-2" : ""} 
             ${index === 1 ? "col-span-5 md:col-span-5 md:row-span-3" : ""} 
-            ${index === 2 || index === 3 ? "col-span-9 row-span-2 md:col-span-2 md:row-span-1" : ""} 
-            ${index === 4 ? "col-span-4 md:col-span-4 md:row-span-2" : ""} 
-            ${index === 5 ? "col-span-5 md:col-span-5 md:row-span-2" : ""}
-            ${index === 6 ? "col-span-3 md:col-span-3 md:row-span-2" : ""}
-            ${index === 7 ? "col-span-3 md:col-span-3 md:row-span-2" : ""}
-            ${index === 8 ? "col-span-3 md:col-span-3 md:row-span-2" : ""}
+            ${index === 2 ? "col-span-9 row-span-2 md:col-span-4 md:row-span-1" : ""}
             `}
         >
           <Image
