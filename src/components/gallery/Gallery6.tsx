@@ -6,16 +6,16 @@ import { motion } from "motion/react";
 
 const localGallery = [
   {
-    src: "/gallerysection6/soluna1.jpg",
+    src: "/gallerysection6/soluna1.webp",
     label: "Soluna Mental Health & Study Tips",
     alt: "",
   },
-  { src: "/gallerysection6/soluna2.jpg", label: "", alt: "" },
-  { src: "/gallerysection6/soluna3.jpg", label: "", alt: "" },
-  { src: "/gallerysection6/soluna4.jpg", label: "", alt: "" },
+  { src: "/gallerysection6/soluna2.webp", label: "", alt: "" },
+  { src: "/gallerysection6/soluna3.webp", label: "", alt: "" },
+  { src: "/gallerysection6/soluna4.webp", label: "", alt: "" },
   { src: "/gallerysection6/soluna7.webp", label: "", alt: "" },
-  { src: "/gallerysection6/soluna5.jpg", label: "", alt: "" },
-  { src: "/gallerysection6/soluna8.jpg", label: "", alt: "" },
+  { src: "/gallerysection6/soluna5.webp", label: "", alt: "" },
+  { src: "/gallerysection6/soluna8.webp", label: "", alt: "" },
 ];
 
 const Gallery2 = () => {

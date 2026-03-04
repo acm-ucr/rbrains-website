@@ -5,9 +5,9 @@ import { motion } from "motion/react";
 // import { gallery } from "../../data/gallery4";
 
 const localGallery = [
-  { src: "/gallerysection5/GM1.jpg", label: "", alt: "" },
-  { src: "/gallerysection5/GM2.jpg", label: "General Meetings", alt: "" },
-  { src: "/gallerysection5/GM3.jpg", label: "", alt: "" },
+  { src: "/gallerysection5/GM1.webp", label: "", alt: "" },
+  { src: "/gallerysection5/GM2.webp", label: "General Meetings", alt: "" },
+  { src: "/gallerysection5/GM3.webp", label: "", alt: "" },
 ];
 
 const Gallery3 = () => {
