@@ -12,6 +12,7 @@ import Gallery5 from "@/components/gallery/Gallery5";
 import Gallery6 from "@/components/gallery/Gallery6";
 import Gallery7 from "@/components/gallery/Gallery7";
 import Gallery8 from "@/components/gallery/Gallery8";
+import Gallery9 from "@/components/gallery/Gallery9";
 
 const Page = () => {
   const [isGallery2Visible, setIsGallery2Visible] = useState(false);
@@ -22,6 +23,7 @@ const Page = () => {
       <Gallery5 />
       <Gallery6 />
       <Gallery8 />
+      <Gallery9 />
       <Gallery7 />
       <Gallery1 />
       <Gallery2 />
