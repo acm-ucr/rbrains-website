@@ -1,11 +1,11 @@
 import { StaticImageData } from "next/image";
-import One from "@/public/gallerysection9/winter1.jpeg";
-import Two from "@/public/gallerysection9/winter2.jpeg";
-import Three from "@/public/gallerysection9/winter3.jpeg";
-import Four from "@/public/gallerysection9/winter4.jpeg";
-import Five from "@/public/gallerysection9/winter5.jpeg";
-import Six from "@/public/gallerysection9/winter6.jpeg";
-import Seven from "@/public/gallerysection9/winter7.jpeg";
+import One from "@/public/gallerysection9/winter1.webp";
+import Two from "@/public/gallerysection9/winter2.webp";
+import Three from "@/public/gallerysection9/winter3.webp";
+import Four from "@/public/gallerysection9/winter4.webp";
+import Five from "@/public/gallerysection9/winter5.webp";
+import Six from "@/public/gallerysection9/winter6.webp";
+import Seven from "@/public/gallerysection9/winter7.webp";
 
 interface Photo {
   src: StaticImageData;
